@@ -2,7 +2,9 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 
 },{"./../images/back-ground-header/mobile/bg-header-mobile-1x-min.png":[["bg-header-mobile-1x-min.93e29e91.png","zEuf"],"zEuf"],"./../images/back-ground-header/mobile/bg-header-mobile-2x-min.png":[["bg-header-mobile-2x-min.fc60d547.png","qAAH"],"qAAH"],"./../images/back-ground-header/tablet/bg-header-tablet-1x-min.png":[["bg-header-tablet-1x-min.2a01093f.png","wSlT"],"wSlT"],"./../images/back-ground-header/tablet/bg-header-tablet-2x-min.png":[["bg-header-tablet-2x-min.3858577b.png","e766"],"e766"],"./../images/back-ground-header/desktop/bg-header-desktop-1x-min.png":[["bg-header-desktop-1x-min.7447a3e0.png","Ikkf"],"Ikkf"],"./../images/back-ground-header/desktop/bg-header-desktop-2x-min.png":[["bg-header-desktop-2x-min.94a930c7.png","jVIm"],"jVIm"]}],"cGsR":[function(require,module,exports) {
 
+},{}],"FG8s":[function(require,module,exports) {
+const t="iMT6lnWYsBtdSwl0jr9udmE86Jo5qsGK",e="https://app.ticketmaster.com/discovery/v2/events.json",n="";function o(){return fetch(`${e}?page=${n}0&apikey=${t}`).then(t=>t.json())}o().then(t=>console.log(t));
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/header"),require("./js/galery"),require("./js/footer"),require("./js/pagination"),require("./js/modal"),require("./js/reference");
-},{"./sass/main.scss":"clu1","./js/header":"cGsR","./js/galery":"cGsR","./js/footer":"cGsR","./js/pagination":"cGsR","./js/modal":"cGsR","./js/reference":"cGsR"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-events/src.9418686b.js.map
+"use strict";require("./sass/main.scss"),require("./js/header"),require("./js/galery"),require("./js/footer"),require("./js/pagination"),require("./js/modal"),require("./js/reference"),require("./js/service/api");
+},{"./sass/main.scss":"clu1","./js/header":"cGsR","./js/galery":"cGsR","./js/footer":"cGsR","./js/pagination":"cGsR","./js/modal":"cGsR","./js/reference":"cGsR","./js/service/api":"FG8s"}]},{},["Focm"], null)
+//# sourceMappingURL=/team-project-events/src.ba30f1cb.js.map
