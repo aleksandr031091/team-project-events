@@ -1,4 +1,6 @@
 .header {
+  padding-top: 78px;
+  padding-bottom: 52px;
   background-image: url(../images/back-ground-header/mobile/bg-header-mobile-1x-min.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -37,4 +39,84 @@
       }
     }
   }
+}
+
+.logo-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-title {
+  display: block;
+
+  max-width: 212px;
+  margin: 0 auto 25px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #dc56c5;
+}
+
+.header-search {
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+//Search by keyword
+
+.form-search-keyword {
+  margin-bottom: 25px;
+}
+
+.form-search-keyword_input {
+  padding: 10px 0 10px 30px;
+  background-color: $form-bg-color;
+  backdrop-filter: blur(20px);
+
+  color: $further-text-color;
+  font-size: 16px;
+  line-height: 1.25;
+
+  border-radius: 20px;
+}
+
+// Selection of countries
+
+.header-src-country {
+  max-width: 270px;
+  display: flex;
+  padding: 10px 0 10px 30px;
+
+  background-color: $form-bg-color;
+  backdrop-filter: blur(20px);
+
+  border-radius: 20px;
+}
+
+.header-src-country_placeholder {
+  margin-right: 68px;
+
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: $further-text-color;
+}
+
+// button selection of countries
+
+.btn-selection-countries {
+  border: none;
+  background-color: transparent;
+}
+
+.header-triangle-icon {
+  fill: $further-text-color;
 }
