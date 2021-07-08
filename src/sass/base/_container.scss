@@ -1,21 +1,21 @@
 .container {
-  //   position: relative;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-right: 25px;
   padding-left: 25px;
 
-  //   @include for-size(mobile) {
-  //     width: 480px;
-  //   }
+  @media screen and (min-width: 480px) {
+    max-width: 320px;
+  }
 
-  //   @include for-size(tablet-only) {
-  //     width: 768px;
-  //     padding-left: 75px;
-  //     padding-right: 75px;
-  //   }
-  //   @include for-size(desktop) {
-  //     width: 1280px;
-  //   }
+  @media screen and (min-width: 768px) {
+    max-width: 625px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 960px;
+  }
 }
