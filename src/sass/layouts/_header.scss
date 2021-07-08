@@ -77,23 +77,32 @@
 }
 
 .form-search-keyword_input {
-  padding: 10px 0 10px 30px;
+  min-width: 270px;
+  padding: 10px 30px;
+
   background-color: $form-bg-color;
   backdrop-filter: blur(20px);
 
-  color: $further-text-color;
   font-size: 16px;
   line-height: 1.25;
+  color: #cccccc;
 
   border-radius: 20px;
+
+  outline: none;
+  border: none;
+}
+
+::placeholder {
+  color: $further-text-color;
 }
 
 // Selection of countries
 
 .header-src-country {
-  max-width: 270px;
-  display: flex;
-  padding: 10px 0 10px 30px;
+  min-width: 270px;
+  display: inline-block;
+  padding: 10px 30px;
 
   background-color: $form-bg-color;
   backdrop-filter: blur(20px);
@@ -101,9 +110,12 @@
   border-radius: 20px;
 }
 
-.header-src-country_placeholder {
-  margin-right: 68px;
+.header-src-country_content {
+  display: flex;
+  justify-content: space-between;
+}
 
+.header-src-country_placeholder {
   font-size: 16px;
   line-height: 1.25;
 
@@ -113,10 +125,18 @@
 // button selection of countries
 
 .btn-selection-countries {
+  padding: 2px;
   border: none;
   background-color: transparent;
 }
 
 .header-triangle-icon {
   fill: $further-text-color;
+
+  transition: transform 250ms linear;
+  .btn-selection-countries:hover &,
+  .btn-selection-countries:focus & {
+    transform: rotateZ(-180deg);
+    transform-origin: center center;
+  }
 }
