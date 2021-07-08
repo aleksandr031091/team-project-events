@@ -1,1 +1,14 @@
-@import './footer';
+@import './base/common';
+@import './base/container';
+@import './base/normalize';
+@import './base/section';
+
+@import './components/modal';
+@import './components/pagination';
+
+@import './layouts/header';
+@import './layouts/gallery';
+@import './layouts/footer';
+
+@import './utils/mixsin';
+@import './utils/variables';
