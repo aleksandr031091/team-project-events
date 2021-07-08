@@ -1,0 +1,25 @@
+@media screen and (min-width: 280px) {
+  .footer__text {
+    color: $basic-text-color;
+    background-color: black;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.22;
+    margin-top: 60px;
+    margin-bottom: 27px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__text {
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer__text {
+    margin-top: 80px;
+  }
+}
