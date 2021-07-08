@@ -1,6 +1,5 @@
 <header class="header">
-    <div class="container">
-        
+    <div class="container header-container">  
         <div class="logo-header">
             <picture>
                 <source srcset="./images/logo/logo-mobile.png" media="(min-width: 480px)">
@@ -15,12 +14,15 @@
         <div class="header-search">
             <div class="form-search-keyword">
                 <input class="form-search-keyword_input" type="text" placeholder="Start searching">
+                <svg class="header-loupe-icone" aria-label="magnifying glass" width="12" height="12">
+                    <use  href="./images/sprite.svg#icon-search"></use>
+                </svg>
             </div>
             <div class="header-src-country">
                 <div class="header-src-country_content">
                     <p class="header-src-country_placeholder">Choose country</p>
                     <button class="btn-selection-countries" type="button">
-                        <svg aria-label="переключатель выпадающего меню" width="15" height="10">
+                        <svg aria-label="dropdown toggle" width="13" height="8">
                             <use class="header-triangle-icon" href="./images/sprite.svg#icon-triangle"></use>
                         </svg>
                     </button>
