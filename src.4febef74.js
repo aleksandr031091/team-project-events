@@ -20,4 +20,4 @@ const t="iMT6lnWYsBtdSwl0jr9udmE86Jo5qsGK",e="https://app.ticketmaster.com/disco
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/header"),require("./js/galery"),require("./js/footer"),require("./js/pagination"),require("./js/modal"),require("./js/reference"),require("./js/service/api");
 },{"./sass/main.scss":"clu1","./js/header":"cGsR","./js/galery":"cGsR","./js/footer":"cGsR","./js/pagination":"o8lo","./js/modal":"RSqK","./js/reference":"cGsR","./js/service/api":"FG8s"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-events/src.6889c945.js.map
+//# sourceMappingURL=/team-project-events/src.4febef74.js.map
