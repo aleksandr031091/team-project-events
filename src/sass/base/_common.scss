@@ -12,6 +12,37 @@ html {
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+
+  background-image: url(../images/back-ground-image/bg-mobile@1x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url(../images/back-ground-image/bg-mobile@2x.png);
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/back-ground-image/bg-tablet@1x.png);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/back-ground-image/bg-tablet@2x.png);
+    }
+
+    @media screen and (min-width: 1280px) {
+      background-image: url(../images/back-ground-image/bg-desktop@1x.png);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url(../images/back-ground-image/bg-desktop@2x.png);
+      }
+    }
+  }
 }
 
 h1,
