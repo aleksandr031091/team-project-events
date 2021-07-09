@@ -1,0 +1,60 @@
+.gallery-overlay {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -7px;
+  margin-top: -7px;
+}
+.photo-card {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.gallery-location-icon {
+  fill: $further-text-color;
+}
+.card-container {
+  margin-left: 7px;
+  margin-top: 7px;
+  width: calc(100% / 2 - 14px);
+}
+.photo-card__photo {
+  width: 128px;
+  height: 83px;
+  border-radius: 40px 0px;
+  margin-bottom: 5px;
+}
+.photo-card__name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  color: $accent-color;
+  margin-bottom: 5px;
+}
+.photo-card__dates {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: $basic-text-color;
+  margin-bottom: 5px;
+}
+.photo-card__adress {
+  color: $basic-text-color;
+  text-align: center;
+}
+.little-line {
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
