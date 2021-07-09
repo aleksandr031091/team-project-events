@@ -21,3 +21,40 @@
     pointer-events: initial;
   }
 }
+.modal-img {
+  width: 102px;
+  height: 102px;
+}
+.info-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+
+  color: #dc56c5;
+}
+.info-text {
+  font-size: 16px;
+  line-height: 0.8;
+  text-align: center;
+}
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 0.8;
+  height: 40px;
+}
+.btn-buy-ticket {
+  width: 145px;
+  padding: 10px, 20px;
+  background-color: #4c00fe;
+}
+.button-more-info {
+  width: 230px;
+  color: #4c00fe;
+  padding: 10px, 3px;
+  border: 1px solid #4c00fe;
+  margin-bottom: 104px;
+}
