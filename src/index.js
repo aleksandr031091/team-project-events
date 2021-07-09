@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import './js/header';
-import './js/galery';
+import './js/gallery';
 import './js/footer';
 import './js/pagination';
 import './js/modal';
