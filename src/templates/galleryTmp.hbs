@@ -1,10 +1,19 @@
 {{#each this}}
-  <li class="card-container">
-    <div class="photo-card">
-      <img src="{{images.[0].url}}" alt="photo-" />
-      <h2 class="">{{name}}</h2>
-      <p>{{dates.start.localDate}}</p>
-      <p><a href="{{seatmap.staticUrl}}">Maps</a></p>
-    </div>
-  </li>
+
+
+<li class="card-container">
+  <div class="photo-card">
+    <img class="photo-card__photo" src="{{images.[5].url}}" alt="photo-" />
+    <h2 class="photo-card__name little-line">{{name}}</h2>
+    <p class="photo-card__dates">{{dates.start.localDate}}</p>
+    <p><a class="link photo-card__adress little-line" target="_blank" href="{{_embedded.venues.[0].url}}">
+        <svg width="13" height="8">
+          <use class="use" href="./images/sprite.svg#icon-location"></use>
+        </svg>
+        {{_embedded.venues.[0].name}}
+      </a></p>
+  </div>
+</li>
+
+
 {{/each}}

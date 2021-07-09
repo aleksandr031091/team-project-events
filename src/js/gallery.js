@@ -1,11 +1,15 @@
-import { fetchEvents } from './service/api';
+// import { fetchEvents } from './service/api';
+
 import articlesTpl from '../templates/galleryTmp.hbs';
+import apiEvents from '../js/service/api';
+
+// import articlesTpl from '../templates/galleryTmp.hbs';
 
 const refs = {
   gallery: document.querySelector('#gallery-js'),
 };
 
-fetchEvents().then(data => {
+apiEvents.fetchEvents().then(data => {
   const events = data._embedded.events;
   console.log(events);
   const markUp = articlesTpl(events);
@@ -14,5 +18,8 @@ fetchEvents().then(data => {
 });
 
 // .then(data => data.forEach(element => {
-
 // }))
+
+// // .then(data => data.forEach(element => {
+
+// // }))

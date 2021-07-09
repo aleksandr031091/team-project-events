@@ -26,7 +26,7 @@
       {{#each priceRanges}}
         <p class='info-text price-text'>
           <svg class='code' aria-label='Штрих-код'>
-            <use></use>
+            <use href='./images/sprite.svg#icon-code'></use>
           </svg>
           {{this.type}}
           {{this.min}}
@@ -34,8 +34,9 @@
           {{this.max}}
           {{this.currency}}
         </p>
-        <a href='' class='btn-tickets link' target='_blank'>BUY TICKETS</a>
+        <button class='btn btn-buy-ticket' type='button'>BUY TICKETS</button>
       {{/each}}
     </div>
   </div>
+
 {{/each}}
