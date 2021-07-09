@@ -1,12 +1,15 @@
 const refs = {
+    formSearch: document.querySelector('#formSearch-js'),
+    btnSearch: document.querySelector('#btnSearch-js'),
+
     dropdownMenu: document.querySelector('#dropdown-js'),
     dropdownBtn: document.querySelector('#dropdownBtn'),
 };
 
-console.log("~ refs.dropdownBtn", refs.dropdownBtn)
-console.log("~ refs.dropdownMenu", refs.dropdownMenu)
+// refs.btnSearch.addEventListener('submit')
 
 
+// selection-countries
 
 const onClickDropdownMenu = (event) => {
     refs.dropdownMenu.classList.toggle('is-hidden')
