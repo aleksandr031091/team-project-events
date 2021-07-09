@@ -50,7 +50,7 @@
   }
 }
 
-// search
+// ----------------------------- Search
 
 .header-search {
   text-align: center;
@@ -61,7 +61,7 @@
   }
 }
 
-//search by keyword
+// ----------------------------- Search by keyword
 
 .form-search-keyword {
   position: relative;
@@ -97,27 +97,35 @@
   }
 }
 
-.header-loupe-icone {
+.btn-search-keyword {
   position: absolute;
   top: 14px;
   right: 35px;
-  //   fill: $further-text-color;
-  fill: tomato;
-  &:hover,
-  &:focus {
-    fill: $modal-accent-color;
-  }
+  border: none;
+
+  padding: 0;
+  background-color: transparent;
 
   @media screen and (min-width: 768px) {
     right: 30px;
   }
 }
 
-// Selection of countries
+.header-loupe-icone {
+  fill: $further-text-color;
+
+  .btn-search-keyword:hover &,
+  .btn-search-keyword:focus & {
+    fill: #dc56c5;
+  }
+}
+
+// ----------------------------- Selection of countries
 
 .header-src-country {
+  position: relative;
   min-width: 270px;
-  display: inline-block;
+  display: grid;
   padding: 10px 30px;
 
   background-color: $form-bg-color;
@@ -144,20 +152,63 @@
   padding: 2px;
   border: none;
   background-color: transparent;
+
+  //   &:hover,
+  //   &:focus {
+  //     transform: rotateZ(-180deg);
+  //     transform-origin: center center;
+  //   }
+}
+
+.transform-btn {
+  transform: rotateZ(-180deg);
+  transform-origin: center center;
+
+  .header-triangle-icon:hover,
+  .header-triangle-icon:focus {
+    fill: #dc56c5;
+  }
 }
 
 .header-triangle-icon {
   fill: $further-text-color;
+}
 
-  transition: transform 250ms linear;
-  .btn-selection-countries:hover &,
-  .btn-selection-countries:focus & {
-    fill: $modal-accent-color;
-    transform: rotateZ(-180deg);
-    transform-origin: center center;
+// dropdown menu
+
+.dropdown-menu-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 171px;
+  overflow-y: scroll;
+
+  padding-top: 6px;
+
+  background-color: $form-bg-color;
+  backdrop-filter: blur(2px);
+
+  text-align: left;
+  border-radius: 20px;
+  border-top: 1px solid #939393;
+}
+
+.dropdown-menu-list.is-hidden {
+  display: none;
+}
+
+.dropdown-menu-item {
+  padding-left: 30px;
+  &:hover,
+  &:focus {
+    background-color: #dc56c5;
   }
 }
 
-.dropdown-menu-list {
-  display: none;
+.dropdown-menu-text {
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: #cccccc;
 }
