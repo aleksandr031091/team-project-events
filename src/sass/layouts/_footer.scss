@@ -1,7 +1,10 @@
+.footer__container {
+  position: relative;
+}
+
 .footer__text {
   @media screen and (min-width: 280px) {
     color: $basic-text-color;
-    background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
     font-size: 14px;
     line-height: 1.22;
@@ -18,4 +21,197 @@
   @media screen and (min-width: 1280px) {
     margin-top: 80px;
   }
+}
+
+.footer__button {
+  color: $basic-text-color;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.22;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  animation-name: changeColor;
+  animation-duration: 2250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Приостанавливает анимацию при ховере */
+.footer__button:hover {
+  animation-play-state: paused;
+}
+
+@keyframes changeColor {
+  0% {
+    color: $accent-color;
+  }
+
+  50% {
+    color: $basic-text-color;
+  }
+
+  100% {
+    color: $accent-color;
+  }
+}
+
+.modal {
+  position: absolute;
+  margin: 0 auto;
+  top: 60px;
+  background-image: url(../images/back-ground-image/bg-mobile@1x.png);
+  background-color: rgb(34, 34, 34);
+  color: $accent-color;
+
+  @media screen and (min-width: 768px) {
+    top: -600px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: -360px;
+  }
+}
+
+.modal-button-cross {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-bottom: 40px;
+  fill: $basic-text-color;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  box-sizing: border-box;
+  &:hover .icon-cross,
+  &:focus .icon-cross {
+    fill: $accent-color;
+  }
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  margin: 10px;
+}
+
+.event {
+  color: $basic-text-color;
+  text-shadow: -1px -2px 2px $accent-color;
+}
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -10px;
+  margin-left: -10px;
+  @media screen and (min-width: 1280px) {
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+}
+
+.team__item {
+  margin-top: 10px;
+  margin-left: 10px;
+  flex-basis: calc((100% / 2) - 10px);
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% / 3) - 10px);
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100% / 6) - 20px);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+.team__picture {
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  animation: frame-shine 1750ms linear 100ms infinite;
+
+  @media screen and (min-width: 768px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes frame-shine {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    box-shadow: 2px 2px 3px 1px $accent-color;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+.team__title {
+  font-size: 18px;
+  text-align: center;
+  margin: 5px;
+  text-shadow: -1px -2px 2px $basic-text-color;
+}
+
+.team__data {
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.team__position {
+  text-align: center;
+  margin-bottom: 5px;
+  color: $basic-text-color;
+}
+
+.team__links {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.social-list__link:not(:last-child) {
+  margin-right: 6px;
+}
+
+.social-list__icon {
+  margin: 5px;
+  fill: $basic-text-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-list__icon:hover,
+.social-list__icon:focus {
+  fill: $accent-color;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
