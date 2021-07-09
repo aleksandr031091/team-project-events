@@ -16,8 +16,8 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"RSqK":[function(require,module,exports) {
 "use strict";var e=u(require("../modal.hbs"));function u(e){return e&&e.__esModule?e:{default:e}}function r(e){}
 },{"../modal.hbs":"qoPO"}],"FG8s":[function(require,module,exports) {
-const t="iMT6lnWYsBtdSwl0jr9udmE86Jo5qsGK",e="https://app.ticketmaster.com/discovery/v2/events.json",n="";function o(){return fetch(`${e}?page=${n}0&apikey=${t}`).then(t=>t.json())}o().then(t=>console.log(t));
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchEventsById=exports.fetchEventsBykeyword=exports.fetchEvents=void 0;const t="iMT6lnWYsBtdSwl0jr9udmE86Jo5qsGK",e="https://app.ticketmaster.com/discovery/v2/events",s=async()=>{const s=`${e}.json?&apikey=${t}`;return(await fetch(s)).json()};exports.fetchEvents=s;const o=async(s,o)=>{const n=`${e}.json?keyword=${s}&countryCode=${o}&apikey=${t}`;return(await fetch(n)).json()};exports.fetchEventsBykeyword=o;const n=async s=>{const o=`${e}/${s}.json?&apikey=${t}`;return(await fetch(o)).json()};exports.fetchEventsById=n;
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/header"),require("./js/galery"),require("./js/footer"),require("./js/pagination"),require("./js/modal"),require("./js/reference"),require("./js/service/api");
 },{"./sass/main.scss":"clu1","./js/header":"cGsR","./js/galery":"cGsR","./js/footer":"cGsR","./js/pagination":"o8lo","./js/modal":"RSqK","./js/reference":"cGsR","./js/service/api":"FG8s"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-events/src.766730d7.js.map
+//# sourceMappingURL=/team-project-events/src.9d7bfd06.js.map
