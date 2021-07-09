@@ -1,5 +1,5 @@
-{{each this}}
-    <li class="dropdown-menu-item">
-        <p class="dropdown-menu-text"></p>
+{{#each this}}
+    <li class="dropdown-menu-item" data-action="{{code}}">
+        <p class="dropdown-menu-text">{{name}}</p>
     </li>
-{{each}}
+{{/each }}
