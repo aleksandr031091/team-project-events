@@ -1,10 +1,10 @@
 {{#each this}}
-  <li class="card-container">
-    <div class="photo-card">
-      <img src="{{images.[0].url}}" alt="photo-" />
-      <h2 class="">{{name}}</h2>
+  <li class='card-container'>
+    <div class='photo-card'>
+      <img src='{{images.0.url}}' data-source='{{images.0.url}}' class='photo-img' alt='photo-' />
+      <h2 class=''>{{name}}</h2>
       <p>{{dates.start.localDate}}</p>
-      <p><a href="{{seatmap.staticUrl}}">Maps</a></p>
+      <p><a href='{{seatmap.staticUrl}}'>Maps</a></p>
     </div>
   </li>
 {{/each}}
