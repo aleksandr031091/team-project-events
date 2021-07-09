@@ -1,38 +1,95 @@
 const API_KEY = 'iMT6lnWYsBtdSwl0jr9udmE86Jo5qsGK';
 
-const BASE_URL = `https://app.ticketmaster.com/discovery/v2/events`;
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
 
-// const totalPage = 1;
+class Api {
+  constructor() {
+    this._size = 20;
+    this._page = 0;
+    this._keyword = '';
+    this._countryCode = '';
+  }
 
-export const fetchEvents = async () => {
-  const url = `${BASE_URL}.json?&apikey=${API_KEY}`;
-  const API = await fetch(url);
-  // .then(data => console.log(data));
-  return API.json();
-};
+  fetchEvents = async () => {
+    const url = `${BASE_URL}.json?keyword=${this.keyword}&countryCode=${this.countryCode}&size=${this.size}&page=${this.page}&apikey=${API_KEY}`;
+    try {
+      const apiRes = await fetch(url);
+      const events = await apiRes.json();
+      return events;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-export const fetchEventsBykeyword = async (keyword, countryCode) => {
-  const url = `${BASE_URL}.json?keyword=${keyword}&countryCode=${countryCode}&apikey=${API_KEY}`;
-  const API = await fetch(url);
+  fetchEventsById = async id => {
+    const url = `${BASE_URL}/${id}.json?&apikey=${API_KEY}`;
+    try {
+      const apiRes = await fetch(url);
+      const datailsEvent = await apiRes.json();
 
-  // console.log(events);
-  return API.json();
-};
+      return datailsEvent;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-export const fetchEventsById = async id => {
-  const url = `${BASE_URL}/${id}.json?&apikey=${API_KEY}`;
-  const API = await fetch(url);
+  get size() {
+    return this._size;
+  }
 
-  // console.log(events);
-  return API.json();
-};
+  set size(newSize) {
+    this._size = newSize;
+  }
 
-// import { fetchEventsBykeyword, fetchEvents, fetchEventsById } from './service/api';
-// const keyword = 'Rock Fest';
-// const countryCode = 'US';
-// const id = 'G5v0ZpnSL0wtY';
-// // fetchEventsBykeyword(keyword, countryCode).then(res => console.log(res));
+  get pageNumber() {
+    return this._page;
+  }
 
-// // fetchEvents().then(res => console.log(res));
+  set pageNumber(newPage) {
+    this._page = newPage;
+  }
 
-// fetchEventsById(id).then(res => console.log(res));
+  get keyword() {
+    return this._keyword;
+  }
+
+  set keyword(newKeyword) {
+    this._keyword = newKeyword;
+  }
+
+  get countryCode() {
+    return this._countryCode;
+  }
+
+  set countryCode(newCountryCode) {
+    this._countryCode = newCountryCode;
+  }
+
+  get page() {
+    return this._page;
+  }
+
+  set page(newPage) {
+    this._page = newPage;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  incrementPage() {
+    this.page += 1;
+  }
+
+  decrementPage() {
+    this.page -= 1;
+  }
+}
+
+const apiEvents = new Api();
+
+export default apiEvents;
+
+// import apiEvents from './service/api';
+
+// apiEvents.fetchEvents().then(res => console.log(res));
