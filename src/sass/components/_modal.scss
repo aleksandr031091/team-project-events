@@ -1,0 +1,23 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+.is-hidden {
+  overflow: hidden;
+}
+.lightbox {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
