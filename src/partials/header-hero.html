@@ -1,12 +1,14 @@
 <header class="header">
     <div class="container header-container">  
         <div class="logo-header">
-            <picture>
-                <source srcset="./images/logo/logo-mobile.png" media="(min-width: 480px)">
-                <source srcset="./images/logo/logo-tablet.png" media="(min-width: 768px)">
-                <source srcset="./images/logo/logo-desktop.png" media="(min-width: 1280px)">
-                <img src="./images/logo/logo-mobile.png" alt="logo">
-            </picture>
+            <a href="./">
+                <picture>
+                    <source srcset="./images/logo/logo-desktop.png" media="(min-width: 1280px)">
+                    <source srcset="./images/logo/logo-tablet.png" media="(min-width: 768px)">
+                    <source srcset="./images/logo/logo-mobile.png" media="(max-width: 767px)">
+                    <img src="./images/logo/logo-mobile.png" alt="logo">
+                </picture>
+            </a>
         </div>
         
         <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
@@ -26,6 +28,7 @@
                             <use class="header-triangle-icon" href="./images/sprite.svg#icon-triangle"></use>
                         </svg>
                     </button>
+                    <ul class="dropdown-menu-list"></ul>
                 </div> 
             </div>
         </div>
