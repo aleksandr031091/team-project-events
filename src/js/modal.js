@@ -1,3 +1,3 @@
-import modalTpl from '../modal.hbs';
+import modalTpl from '../templates/modal-gallery.hbs';
 
 function renderCard(card) {}
