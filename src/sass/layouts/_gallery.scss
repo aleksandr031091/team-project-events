@@ -4,59 +4,83 @@
   flex-wrap: wrap;
   margin-left: -7px;
   margin-top: -7px;
+  @media screen and (min-width: 768px) {
+    margin-left: -28px;
+    margin-top: -58px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: -70px;
+    margin-top: -63px;
+    padding-bottom: 190px;
+  }
 }
-.photo-card {
-  display: flex;
-  flex-direction: column;
-
+.card {
+  position: relative;
+  display: block;
   text-align: center;
-}
+  margin-left: 14px;
+  margin-top: 42px;
+  flex-basis: calc((100% - 28px) / 2);
+  @media screen and (min-width: 768px) {
+    margin-left: 28px;
+    margin-top: 58px;
+    flex-basis: calc((100% - 84px) / 3);
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 70px;
+    margin-top: 63px;
+    flex-basis: calc((100% - 280px) / 4);
+  }
 
-.gallery-location-icon {
-  fill: $further-text-color;
-}
-
-.card-container {
-  margin-left: 7px;
-  margin-top: 7px;
-  width: calc(100% / 2 - 14px);
-}
-.photo-card__photo {
-  width: 128px;
-  height: 83px;
-  border-radius: 40px 0px;
-  margin-bottom: 5px;
-
-  .photo-card__name {
+  &__title {
     font-weight: 700;
-    font-size: 14px;
-    line-height: 1.21;
+    font-size: 16px;
+    text-align: center;
     color: $accent-color;
     margin-bottom: 5px;
   }
-  .photo-card__dates {
+
+  &__date {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.21;
+    font-size: 16px;
+    text-align: center;
     color: $basic-text-color;
     margin-bottom: 5px;
   }
-  .photo-card__adress {
+
+  &__adress {
+    font-weight: 600;
+    font-size: 14px;
     color: $basic-text-color;
-    text-align: center;
   }
-  // .little-line {
-  //   -ms-text-overflow: ellipsis;
-  //   -o-text-overflow: ellipsis;
-  //   text-overflow: ellipsis;
-  //   overflow: hidden;
-  //   -ms-line-clamp: 2;
-  //   -webkit-line-clamp: 2;
-  //   line-clamp: 2;
-  //   display: -webkit-box;
-  //   display: box;
-  //   word-wrap: break-word;
-  //   -webkit-box-orient: vertical;
-  //   box-orient: vertical;
-  // }
+
+  &__location-symbol {
+    fill: #ffffff;
+  }
+}
+
+.card__img {
+  max-width: 100%;
+  display: inline-block;
+  border-radius: 50px 0px;
+  height: 161px;
+  margin-bottom: 5px;
+
+  @media screen and (min-width: 768px) {
+    height: 227px;
+  }
+}
+.little-line {
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
 }
