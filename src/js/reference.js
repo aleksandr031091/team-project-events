@@ -3,8 +3,9 @@ export default function getRefs() {
     gallery: document.querySelector('#gallery-js'),
     closeModal: document.querySelector('[data-action="close-modal"]'),
     liCardGallery: document.querySelector('.card-container'),
-    jsLightbox: document.querySelector('.js-lightbox'),
-    lightboxCard: document.querySelector('.lightbox-card'),
-    closeBtn: document.querySelector('[data-action="close-modal"]'),
+    lightbox: document.querySelector('.js-lightbox'),
+    button: document.querySelector('[data-action="close-lightbox"]'),
+    contentLightbox: document.querySelector('.lightbox__content'),
+    lightboxOverlay: document.querySelector('.lightbox__overlay'),
   };
 }

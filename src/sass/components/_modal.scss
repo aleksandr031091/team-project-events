@@ -1,6 +1,6 @@
 :root {
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 250ms;
+  --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms;
 }
 .is-hidden {
   overflow: hidden;
@@ -21,22 +21,59 @@
     pointer-events: initial;
   }
 }
+.lightbox__content {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  padding-top: 75px;
+  padding-bottom: 75px;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+  background-color: #fff2fd;
+  border-radius: 150px 0px;
+  transform: scale(0.95);
+  transition: transform var(--timing-function) var(--animation-duration);
+}
 .modal-img {
+  display: block;
+  margin-bottom: 18px;
+  margin-right: auto;
+  margin-left: auto;
   width: 102px;
   height: 102px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .info-title {
-  font-weight: 600;
+  font-style: normal;
+  font-weight: bold;
   font-size: 20px;
   line-height: 1.2;
   text-align: center;
-
   color: #dc56c5;
+  margin-bottom: 5px;
 }
 .info-text {
+  display: block;
   font-size: 16px;
-  line-height: 0.8;
+  line-height: 1.2;
   text-align: center;
+  margin-bottom: 10px;
+  color: #000000;
+}
+.code {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  padding: 0;
+  margin-right: 13px;
+  fill: currentColor;
 }
 .btn {
   cursor: pointer;
@@ -47,14 +84,44 @@
   height: 40px;
 }
 .btn-buy-ticket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 145px;
-  padding: 10px, 20px;
-  background-color: #4c00fe;
+  height: 40px;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #ffffff;
+  background: #4c00fe;
+  border-radius: 5px;
 }
 .button-more-info {
-  width: 230px;
-  color: #4c00fe;
-  padding: 10px, 3px;
+  display: block;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid #4c00fe;
-  margin-bottom: 104px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #4c00fe;
+  background-color: rgba(211, 154, 154, 0);
+  box-shadow: none;
+  transition: all var(--timing-function) var(--animation-duration);
+}
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+
+  fill: #4c00fe;
 }
