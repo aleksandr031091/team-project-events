@@ -4,11 +4,13 @@
   <img class='card__img' src={{images.[5].url}} alt='event image' />
   <h2 class='card__title little-line'>{{name}}</h2>
   <p class='card__date'>{{dates.start.localDate}}</p>
-  <p><a class="link card__adress little-line" target="_blank" href="{{_embedded.venues.[0].url}}">
+  <p>
+    <a class="link card__adress little-line" target="_blank" href="{{_embedded.venues.[0].url}}">
       <svg class='card__location-symbol' width='7' height='10'>
         <use href='./images/sprite.svg#icon-location'></use>
       </svg>
       {{_embedded.venues.[0].name}}
+    </a>
   </p>
 </li>
 
