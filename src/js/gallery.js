@@ -2,6 +2,7 @@
 
 import articlesTpl from '../templates/galleryTmp.hbs';
 import apiEvents from '../js/service/api';
+import pagination from './pagination';
 
 // import articlesTpl from '../templates/galleryTmp.hbs';
 

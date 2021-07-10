@@ -1,30 +1,29 @@
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
+import apiEvents from '../js/service/api';
 
-const options = {
-  totalItems: 100,
-  itemsPerPage: 10,
-  visiblePages: 5,
-  page: 10,
-  centerAlign: false,
-  firstItemClassName: 'tui-first-child',
-  lastItemClassName: 'tui-last-child',
-  template: {
-    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-    moveButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
-      '</a>',
-    disabledMoveButton:
-      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
-      '</span>',
-    moreButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-      '<span class="tui-ico-ellip">...</span>' +
-      '</a>',
-  },
-};
+apiEvents.fetchEvents().then(events => {
+  console.log(events);
+  console.log(events.page.totalPages);
+  console.log(events.page.size);
+  console.log(events.page.number);
+  const options = {
+    totalItems: events.page.totalElements,
+    itemsPerPage: events.page.size,
+    visiblePages: 5,
+    page: events.page.number + 1,
+    centerAlign: false,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+  };
+  const pagination = new Pagination('pagination', options);
 
-const pagination = new Pagination('pagination', options);
+  pagination.on('afterMove', event => {
+    const currentPage = event.page;
+    console.log(currentPage);
+  });
+});
+
+// const pagination = new Pagination('pagination', options);
+
+export default pagination;
