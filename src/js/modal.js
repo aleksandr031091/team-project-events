@@ -8,46 +8,32 @@ import apiEvents from '../js/service/api';
 const refs = getRefs();
 
 refs.gallery.addEventListener('click', onGalleryClick);
-refs.closeBtn.addEventListener('click', closeOnClick);
+refs.button.addEventListener('click', closeOnClick);
 
 function onGalleryClick(e) {
-  const card = e.target.closest('.card-container');
-  if (!card) return;
-
-  renderEventMarkup(card);
-  refs.jsLightbox.classList.add('is-open');
-  document.body.classList.add('is-hidden');
-}
-
-function closeOnClick() {
-  refs.jsLightbox.classList.remove('is-open');
-  document.body.classList.remove('is-hidden');
-}
-
-function renderEventMarkup(card) {
-  apiEvents.id = card.parentNode.dataset.id;
-  apiEvents.fetchEventsById().then(data => {
-    // const events = data._embedded.events;
-    // console.log(events);
-    renderEvent(events);
+  const cardId = e.target.closest('li').dataset.source;
+  if (!cardId) return;
+  apiEvents.fetchEventsById(cardId).then(data => {
+    const markUp = modalGalleryTpl(data);
+    console.log(data);
+    refs.contentLightbox.innerHTML = markUp;
+    refs.lightbox.classList.add('is-open');
+    document.body.classList.add('is-hidden');
   });
 }
 
-function renderEvent(events) {
-  refs.lightboxCard.insertAdjacentHTML('afterbegin', modalGalleryTpl(events));
+function closeOnClick() {
+  refs.lightbox.classList.remove('is-open');
+  document.body.classList.remove('is-hidden');
 }
 
-// function onGalleryClick(e) {
-//   e.preventDefault();
+// function renderEventMarkup() {
+//   apiEvents.fetchEventsById().then(data => {
+//     console.log(data);
+//   });
+// }
 
-//   if (e.target === e.currentTarget) {
-//     return;
-//   }
-//   const liCard = e.target.closest('.card-container');
-//   const imgCard = liCard.querySelector('.photo-img');
-
-//   const changeModalImage = `<img src=${imgCard.dataset.source} alt="icon" />`;
-//   const instance = basicLightbox.create(changeModalImage);
-
-//   instance.show();
+// function renderEvent(events) {
+//   const markUp = modalGalleryTpl(events);
+//   refs.lightboxCard.innerHTML = markUp;
 // }
