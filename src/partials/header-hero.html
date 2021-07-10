@@ -14,8 +14,8 @@
         <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
         
         <div class="header-search">
-            <form class="form-search-keyword" id="formSearch-js">
-                <input class="form-search-keyword_input" type="text" placeholder="Start searching">
+            <form class="form-search-keyword" id="formSearch-js" name="formSearc">
+                <input class="form-search-keyword_input" type="text" placeholder="Start searching" name="formSearc">
                 <button class="btn-search-keyword" type="submit" id="btnSearch-js">
                     <svg class="header-loupe-icone" aria-label="magnifying glass" width="12" height="12">
                         <use href="./images/sprite.svg#icon-search"></use>
@@ -23,9 +23,9 @@
                 </button>
                 
             </form>
-            <div class="header-src-country">
+            <div class="header-src-country" id="src-country-js">
                 <div class="header-src-country_content">
-                    <p class="header-src-country_placeholder">Choose country</p>
+                    <p class="header-src-country_placeholder" id="dropdownPlaceholder-js">Choose country</p>
                     <button class="btn-selection-countries" type="button" id="dropdownBtn">
                         <svg aria-label="dropdown toggle" width="13" height="8">
                             <use class="header-triangle-icon" href="./images/sprite.svg#icon-triangle"></use>
