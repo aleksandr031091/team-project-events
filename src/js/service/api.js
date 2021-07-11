@@ -12,6 +12,7 @@ class Api {
 
   fetchEvents = async () => {
     const url = `${BASE_URL}.json?keyword=${this.keyword}&countryCode=${this.countryCode}&size=${this.size}&page=${this.page}&apikey=${API_KEY}`;
+
     try {
       const apiRes = await fetch(url);
       const events = await apiRes.json();
