@@ -58,42 +58,42 @@
   }
 }
 
-.modal {
-  position: absolute;
-  margin: 0 auto;
-  top: 60px;
-  background-image: url(../images/back-ground-image/bg-mobile@1x.png);
-  background-color: rgb(34, 34, 34);
-  color: $accent-color;
+// .modal {
+//   position: absolute;
+//   margin: 0 auto;
+//   top: 60px;
+//   background-image: url(../images/back-ground-image/bg-mobile@1x.png);
+//   background-color: rgb(34, 34, 34);
+//   color: $accent-color;
 
-  @media screen and (min-width: 768px) {
-    top: -600px;
-  }
+//   @media screen and (min-width: 768px) {
+//     top: -600px;
+//   }
 
-  @media screen and (min-width: 1280px) {
-    top: -360px;
-  }
-}
+//   @media screen and (min-width: 1280px) {
+//     top: -360px;
+//   }
+// }
 
-.modal-button-cross {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-bottom: 40px;
-  fill: $basic-text-color;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  box-sizing: border-box;
-  &:hover .icon-cross,
-  &:focus .icon-cross {
-    fill: $accent-color;
-  }
-}
+// .modal-button-cross {
+//   position: absolute;
+//   top: 8px;
+//   right: 8px;
+//   width: 30px;
+//   height: 30px;
+//   padding: 0;
+//   margin-bottom: 40px;
+//   fill: $basic-text-color;
+//   background-color: transparent;
+//   border-radius: 50%;
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+//   cursor: pointer;
+//   box-sizing: border-box;
+//   &:hover .icon-cross,
+//   &:focus .icon-cross {
+//     fill: $accent-color;
+//   }
+// }
 
 .modal__title {
   text-align: center;
@@ -210,8 +210,8 @@
   fill: $accent-color;
 }
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+// .is-hidden {
+//   opacity: 0;
+//   visibility: hidden;
+//   pointer-events: none;
+// }

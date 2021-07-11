@@ -22,7 +22,7 @@ import 'basicLightbox/dist/basicLightbox.min.css';
 const refs = getRefs();
 
 refs.gallery.addEventListener('click', onGalleryClick);
-refs.button.addEventListener('click', closeOnClick);
+// refs.button.addEventListener('click', closeOnClick);
 
 function onGalleryClick(e) {
   // e.preventDefault();
