@@ -32,6 +32,15 @@
   text-align: center;
 
   color: #dc56c5;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #dc56c5, 0 2px 0 #c7c5c5, 0 3px 0 #dc56c5, 0 4px 0 #c7c5c5, 0 5px 0 #dc56c5,
+    0 6px 1px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3),
+    0 20px 20px rgba(0, 0, 0, 0.1);
+
+  // border-radius: 50%;
+  // text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5, -1px -1px 20px #dc56c5,
+  //   -2px -2px 20px #dc56c5;
 
   @media screen and (min-width: 768px) {
     min-width: 353px;
