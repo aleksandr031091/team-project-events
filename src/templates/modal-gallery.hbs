@@ -1,43 +1,45 @@
 {{!-- <img src='{{url}}' alt='{{name}}' class='modal-img' /> --}}
-<div class='modal-gallery'>
+<div class='modal-test'>
+  {{! <div class='modal-gallery'> }}
   <div class='poster-img'>
     <img class='modal-img-gallery' src={{images.5.url}} alt='{{name}}' />
-  </div>
+    {{! </div> }}
 
-  <div class='modal-info'>
-    <h3 class='info-title'>INFO</h3>
-    <p class='info-text'>{{name}} </p>
-    <h3 class='info-title'>WHEN</h3>
-    <p class='info-text'>{{dates.start.localDate}}
-      <br />
-      {{dates.start.localTime}}
-      ({{dates.timezone}})
-    </p>
-    <h3 class='info-title'>WHERE</h3>
-    <p class='info-text'>{{_embedded.venues.0.city.name}},
-      {{_embedded.venues.0.country.name}}
-      <br />
-      {{_embedded.venues.0.name}}
-    </p>
-    <h3 class='info-title'>WHO</h3>
-    <p class='info-text'>{{_embedded.attractions.0.name}}</p>
-    <h3 class='info-title'>PRICES</h3>
-    {{#each priceRanges}}
-      <p class='info-text price-text'>
-        <svg class='code' aria-label='Штрих-код'>
-          <use href='./images/sprite.svg#icon-code'></use>
-        </svg>
-        {{this.type}}
-        {{this.min}}
-        -
-        {{this.max}}
-        {{this.currency}}
+    <div class='modal-info'>
+      <h3 class='info-title'>INFO</h3>
+      <p class='info-text'>{{name}} </p>
+      <h3 class='info-title'>WHEN</h3>
+      <p class='info-text'>{{dates.start.localDate}}
+        <br />
+        {{dates.start.localTime}}
+        ({{dates.timezone}})
       </p>
-      <button class='btn-buy-ticket' type='button'>BUY TICKETS</button>
-    {{/each}}
+      <h3 class='info-title'>WHERE</h3>
+      <p class='info-text'>{{_embedded.venues.0.city.name}},
+        {{_embedded.venues.0.country.name}}
+        <br />
+        {{_embedded.venues.0.name}}
+      </p>
+      <h3 class='info-title'>WHO</h3>
+      <p class='info-text'>{{_embedded.attractions.0.name}}</p>
+      <h3 class='info-title'>PRICES</h3>
+      {{#each priceRanges}}
+        <p class='info-text price-text'>
+          <svg class='code' aria-label='Штрих-код'>
+            <use href='./images/sprite.svg#icon-code'></use>
+          </svg>
+          {{this.type}}
+          {{this.min}}
+          -
+          {{this.max}}
+          {{this.currency}}
+        </p>
+        <button class='btn-buy-ticket' type='button'>BUY TICKETS</button>
+      {{/each}}
 
+    </div>
   </div>
+  <button type='button' class='button button-more-info' data-action='more-info'>
+    MORE FROM THIS AUTHOR
+  </button>
 </div>
-<button type='button' class='button button-more-info' data-action='more-info'>
-  MORE FROM THIS AUTHOR
-</button>
