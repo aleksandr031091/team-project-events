@@ -11,20 +11,21 @@ refs.gallery.addEventListener('click', onGalleryClick);
 refs.button.addEventListener('click', closeOnClick);
 
 function onGalleryClick(e) {
-  const cardId = e.target.closest('li').dataset.source;
+  // e.preventDefault();
+  const cardId = e.target.closest('li').dataset.action;
   if (!cardId) return;
   apiEvents.fetchEventsById(cardId).then(data => {
     const markUp = modalGalleryTpl(data);
     console.log(data);
     refs.contentLightbox.innerHTML = markUp;
     refs.lightbox.classList.add('is-open');
-    document.body.classList.add('is-hidden');
+    document.body.classList.add('is-hidden-body');
   });
 }
 
 function closeOnClick() {
   refs.lightbox.classList.remove('is-open');
-  document.body.classList.remove('is-hidden');
+  document.body.classList.remove('is-hidden-body');
 }
 
 // function renderEventMarkup() {

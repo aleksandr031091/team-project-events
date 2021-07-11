@@ -2,7 +2,7 @@
   --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
   --timing-function: 250ms;
 }
-.is-hidden {
+.is-hidden-body {
   overflow: hidden;
 }
 .lightbox {
@@ -15,10 +15,17 @@
   pointer-events: none;
   overflow-y: auto;
   overflow-x: hidden;
+  background: $modal-overlay-color;
+  backdrop-filter: blur(3px);
+  transition: all var(--timing-function) var(--animation-duration);
 
   &.is-open {
     opacity: 1;
     pointer-events: initial;
+  }
+  @media screen and (min-width: 768px) and (min-width: 1280px) {
+    top: 50%;
+    left: 50%;
   }
 }
 .lightbox__content {
@@ -30,12 +37,27 @@
   padding-bottom: 75px;
   margin-bottom: 100px;
   box-sizing: border-box;
-  background-color: #fff2fd;
+  background-color: $modal-bg-color;
   border-radius: 150px 0px;
   transform: scale(0.95);
   transition: transform var(--timing-function) var(--animation-duration);
+
+  @media screen and (min-width: 768px) and (min-width: 1280px) {
+    top: 50%;
+    left: 50%;
+
+    max-width: 650px;
+    max-height: auto;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
-.modal-img {
+
+.modal-img-gallery {
   display: block;
   margin-bottom: 18px;
   margin-right: auto;
@@ -56,7 +78,7 @@
   font-size: 20px;
   line-height: 1.2;
   text-align: center;
-  color: #dc56c5;
+  color: $accent-color;
   margin-bottom: 5px;
 }
 .info-text {
@@ -75,27 +97,21 @@
   margin-right: 13px;
   fill: currentColor;
 }
-.btn {
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 0.8;
-  height: 40px;
-}
+
 .btn-buy-ticket {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   width: 145px;
   height: 40px;
   margin-bottom: 30px;
-  font-style: normal;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
   color: #ffffff;
-  background: #4c00fe;
+  background: $modal-accent-color;
   border-radius: 5px;
 }
 .button-more-info {
@@ -103,18 +119,18 @@
   height: 40px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #4c00fe;
+  border: 1px solid $modal-accent-color;
   box-sizing: border-box;
   border-radius: 5px;
-  color: #4c00fe;
+  color: $modal-accent-color;
   background-color: rgba(211, 154, 154, 0);
   box-shadow: none;
   transition: all var(--timing-function) var(--animation-duration);
 }
 .lightbox__button {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 20px;
+  right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,6 +138,7 @@
   height: 50px;
   border: none;
   border-radius: 50%;
+  background-color: $modal-bg-color;
 
-  fill: #4c00fe;
+  fill: $modal-accent-color;
 }

@@ -1,7 +1,7 @@
 {{!-- <img src='{{url}}' alt='{{name}}' class='modal-img' /> --}}
-<div class='modal'>
+<div class='modal-gallery'>
   <div class='poster-img'>
-    <img class='modal-img' src='{{images.0.url}}' alt='{{name}}' />
+    <img class='modal-img-gallery' src={{images.5.url}} alt='{{name}}' />
   </div>
 
   <div class='modal-info'>
@@ -33,7 +33,7 @@
         {{this.max}}
         {{this.currency}}
       </p>
-      <button class='btn btn-buy-ticket' type='button'>BUY TICKETS</button>
+      <button class='btn-buy-ticket' type='button'>BUY TICKETS</button>
     {{/each}}
 
   </div>
