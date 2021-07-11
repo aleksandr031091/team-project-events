@@ -1,12 +1,9 @@
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 import apiEvents from '../js/service/api';
+import renderGallery from './gallery';
 
 apiEvents.fetchEvents().then(events => {
-  console.log(events);
-  console.log(events.page.totalPages);
-  console.log(events.page.size);
-  console.log(events.page.number);
   const options = {
     totalItems: events.page.totalElements,
     itemsPerPage: events.page.size,
@@ -16,14 +13,16 @@ apiEvents.fetchEvents().then(events => {
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
   };
+
   const pagination = new Pagination('pagination', options);
 
   pagination.on('afterMove', event => {
-    const currentPage = event.page;
-    console.log(currentPage);
+    apiEvents.page = event.page - 1;
+    // apiEvents.page = 2000;
+    apiEvents.fetchEvents().then(events => {
+      console.log(events);
+      renderGallery(events);
+    });
   });
+  renderGallery(events);
 });
-
-// const pagination = new Pagination('pagination', options);
-
-export default pagination;
