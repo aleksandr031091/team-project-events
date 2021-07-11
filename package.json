@@ -27,6 +27,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "@pnotify/core": "^5.2.0",
     "basiclightbox": "^5.0.4",
     "hbs": "^4.1.2",
     "tui-pagination": "^3.4.1"
