@@ -30,10 +30,10 @@ function setPagination(totalItems) {
   apiEvents.size = 20; //window.innerWidth
   console.log(totalItems);
   const options = {
-    totalItems,
+    totalItems: totalItems < 1000 ? totalItems : 1000,
     itemsPerPage: apiEvents.size, // window.innerWidth
 
-    visiblePages: 4, // window.innerWidth
+    visiblePages: 5, // window.innerWidth
     page: 1,
     centerAlign: false,
     // firstItemClassName: 'tui-first-child',
