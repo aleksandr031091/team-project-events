@@ -34,8 +34,6 @@ const refetchData = () => {
             delay: 2000,
         });
     });
-    //  .catch(функция для ошибок);
-
 };
 
 // -------------------------------------Event search by keyword
@@ -64,7 +62,7 @@ const closeOpenDropdownMenu = () => {
     refs.searchCountryContainer.classList.toggle('only-border-radius-top');
     refs.dropdownMenu.classList.toggle('is-hidden');
     refs.dropdownBtn.classList.toggle('transform-btn');
-}
+};
 
 const onClickCountryName = (event) => {
 
@@ -73,12 +71,14 @@ const onClickCountryName = (event) => {
     const getCountryCode = event.target.dataset.action;
 
     apiEvents.countryCode = getCountryCode;
-    closeOpenDropdownMenu();
+
     refs.dropdownPlaceholder.textContent = event.target.textContent;
 
     refetchData();
     closeOpenDropdownMenu();
+    document.body.removeEventListener('click', onClicBody);
 };
+
 
 const markup = () => {
     const markupCountries = dropdownMenuTpl(contriesArray);
@@ -86,17 +86,21 @@ const markup = () => {
 };
 
 const onClickDropdownMenu = (event) => {
-
     closeOpenDropdownMenu();
+    document.body.addEventListener('click', onClicBody)
     markup();
 };
 
 refs.searchCountryContainer.addEventListener('click', onClickDropdownMenu);
 refs.dropdownMenu.addEventListener('click', onClickCountryName);
 
-// document.body.addEventListener('click', onCloseSelectionCountries);
-// function onCloseSelectionCountries(event) {
-//     refs.searchCountryContainer.classList.remove('only-border-radius-top');
-//     refs.dropdownMenu.classList.remove('is-hidden');
-//     refs.dropdownBtn.classList.remove('transform-btn');
-// };
+// close dropdown-menu with mouseenter
+
+function onClicBody(event) {
+    if (event.target.closest('#src-country-js') === refs.searchCountryContainer) return false;
+    closeOpenDropdownMenu();
+    document.body.removeEventListener('click', onClicBody)
+}
+
+
+
