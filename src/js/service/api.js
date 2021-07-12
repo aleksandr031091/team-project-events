@@ -6,8 +6,10 @@ class Api {
   constructor() {
     this._size = 20;
     this._page = 0;
+    this._totalPage = 0;
     this._keyword = '';
     this._countryCode = '';
+
   }
 
   fetchEvents = async () => {
@@ -72,6 +74,14 @@ class Api {
 
   set page(newPage) {
     this._page = newPage;
+  }
+
+  get totalPage() {
+    this._totalPage
+  }
+
+  set totalPage(newTotalPage) {
+    this._totalPage = newTotalPage
   }
 
   resetPage() {
