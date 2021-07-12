@@ -1,30 +1,15 @@
 import studentTpl from '../templates/students-modal.hbs';
-
+import team from './team';
 import * as basicLightbox from 'basiclightbox';
 import 'basicLightbox/dist/basicLightbox.min.css';
 
-const button = document.querySelector('#footer-button-js');
+const footerButton = document.querySelector('#footer-button-js');
+const crossButton = document.querySelector('#cross');
+console.log(footerButton);
 
-console.log(button);
-
-button.addEventListener('click', onKlick);
+footerButton.addEventListener('click', onKlick);
 
 function onKlick(e) {
   console.log(e.target);
-  basicLightbox.create(studentTpl()).show();
+  basicLightbox.create(studentTpl(team)).show();
 }
-
-// (() => {
-//   const refs = {
-//     openModalBtn: document.querySelector('[data-modal-open]'),
-//     closeModalBtn: document.querySelector('[data-modal-close]'),
-//     modal: document.querySelector('[data-modal]'),
-//   };
-
-//   refs.openModalBtn.addEventListener('click', toggleModal);
-//   refs.closeModalBtn.addEventListener('click', toggleModal);
-
-//   function toggleModal() {
-//     refs.modal.classList.toggle('is-hidden');
-//   }
-// })();
