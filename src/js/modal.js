@@ -1,12 +1,9 @@
-// import * as basicLightbox from 'basiclightbox';
-// import 'basiclightbox/dist/basicLightbox.min.css';
-
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
 import getRefs from './reference';
 import apiEvents from '../js/service/api';
 
-import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/dist/basicLightbox.min.css';
+// import * as basicLightbox from 'basiclightbox';
+// import 'basicLightbox/dist/basicLightbox.min.css';
 
 // function openStudent(event) {
 //   event.preventDefault();
@@ -22,35 +19,39 @@ import 'basicLightbox/dist/basicLightbox.min.css';
 const refs = getRefs();
 
 refs.gallery.addEventListener('click', onGalleryClick);
-// refs.button.addEventListener('click', closeOnClick);
+refs.button.addEventListener('click', closeOnClick);
+refs.closeLightbox.addEventListener('click', closeOnBackdrop);
+document.addEventListener('keydown', closeOnEscape);
 
 function onGalleryClick(e) {
   // e.preventDefault();
   const cardId = e.target.closest('li').dataset.action;
   if (!cardId) return;
   apiEvents.fetchEventsById(cardId).then(data => {
-    // const markUp = modalGalleryTpl(data);
+    const markUp = modalGalleryTpl(data);
     console.log(data);
-    basicLightbox.create(modalGalleryTpl(data)).show();
+    // basicLightbox.create(modalGalleryTpl(data)).show();
+    // document.body.classList.add('modal-open');
     //
-    // refs.contentLightbox.innerHTML = markUp;
-    // refs.lightbox.classList.add('is-open');
-    // document.body.classList.add('is-hidden-body');
+    refs.contentLightbox.innerHTML = markUp;
+    refs.lightbox.classList.add('is-open');
+    document.body.classList.add('modal-open');
   });
 }
 
-// function closeOnClick() {
-//   refs.lightbox.classList.remove('is-open');
-//   document.body.classList.remove('is-hidden-body');
-// }
+function closeOnClick() {
+  refs.lightbox.classList.remove('is-open');
+  document.body.classList.remove('modal-open');
+}
 
-// function renderEventMarkup() {
-//   apiEvents.fetchEventsById().then(data => {
-//     console.log(data);
-//   });
-// }
+function closeOnBackdrop(e) {
+  if (e.target === e.currentTarget) {
+    closeOnClick();
+  }
+}
 
-// function renderEvent(events) {
-//   const markUp = modalGalleryTpl(events);
-//   refs.lightboxCard.innerHTML = markUp;
-// }
+function closeOnEscape(e) {
+  if (e.code === 'Escape') {
+    closeOnClick();
+  }
+}

@@ -1,68 +1,98 @@
-// :root {
-//   --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
-//   --timing-function: 250ms;
-// }
-
-.modal-test {
-  width: 500px;
-  height: 500px;
-  background-color: #fff;
+:root {
+  --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms;
 }
-
-// .is-hidden-body {
-//   overflow: hidden;
-// }
-// .lightbox {
-//   position: fixed;
+.modal-open {
+  overflow: hidden;
+}
+// .modal-gallery {
+//   position: relative;
 //   z-index: 200;
 //   top: 0;
 //   left: 0;
+//   opacity: 1;
+//   pointer-events: initial;
 
-//   opacity: 0;
-//   pointer-events: none;
 //   overflow-y: auto;
 //   overflow-x: hidden;
 //   background: $modal-overlay-color;
 //   backdrop-filter: blur(3px);
-//   transition: all var(--timing-function) var(--animation-duration);
 
-//   &.is-open {
-//     opacity: 1;
-//     pointer-events: initial;
-//   }
-//   @media screen and (min-width: 768px) and (min-width: 1280px) {
-//     top: 50%;
-//     left: 50%;
-//   }
-// }
-// .lightbox__content {
-//   position: relative;
-//   top: 0%;
-//   left: 0%;
 //   transform: translate(-50%, -50%);
 //   padding-top: 75px;
 //   padding-bottom: 75px;
-//   margin-bottom: 100px;
-//   box-sizing: border-box;
+//   padding-left: 12px;
+//   padding-right: 16px;
+//   // margin-bottom: 100px;
 //   background-color: $modal-bg-color;
 //   border-radius: 150px 0px;
 //   transform: scale(0.95);
-//   transition: transform var(--timing-function) var(--animation-duration);
-
-//   @media screen and (min-width: 768px) and (min-width: 1280px) {
-//     top: 50%;
-//     left: 50%;
-
-//     max-width: 650px;
-//     max-height: auto;
-//     padding-top: 28px;
-//     padding-bottom: 56px;
-//     padding-right: 20px;
-//     padding-left: 20px;
-//     margin-top: 50px;
-//     margin-bottom: 50px;
-//   }
+//   transition: all var(--timing-function) var(--animation-duration);
 // }
+
+.lightbox {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: scroll;
+  background: $modal-overlay-color;
+  backdrop-filter: blur(3px);
+  transition: all var(--timing-function) var(--animation-duration);
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+    overflow: scroll;
+  }
+  @media screen and (min-width: 768px) and (min-width: 1280px) {
+    top: 50%;
+    left: 50%;
+
+    max-width: 650px;
+    max-height: auto;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+.lightbox__content {
+  overflow: scroll;
+  position: relative;
+  transform: translate(-50%, -50%);
+  padding-top: 75px;
+  padding-bottom: 75px;
+  padding-left: 12px;
+  padding-right: 16px;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+  background-color: $modal-bg-color;
+  border-radius: 150px 0px;
+  transform: scale(0.95);
+  transition: transform var(--timing-function) var(--animation-duration);
+  @media screen and (min-width: 768px) and (min-width: 1280px) {
+    top: 50%;
+    left: 50%;
+
+    max-width: 650px;
+    max-height: auto;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
 
 .modal-img-gallery {
   display: block;
@@ -74,6 +104,15 @@
   border-radius: 50%;
   object-fit: cover;
 }
+.modal-img {
+  display: none;
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .modal-img {
+    display: block;
+  }
+}
+
 .modal-info {
   display: flex;
   flex-direction: column;
@@ -134,18 +173,22 @@
   box-shadow: none;
   transition: all var(--timing-function) var(--animation-duration);
 }
-// .lightbox__button {
-//   position: absolute;
-//   top: 20px;
-//   right: 10px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 50px;
-//   height: 50px;
-//   border: none;
-//   border-radius: 50%;
-//   background-color: $modal-bg-color;
+.lightbox__button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: $modal-bg-color;
 
-//   fill: $modal-accent-color;
-// }
+  fill: $modal-accent-color;
+
+  @media screen and (min-width: 768px) and (min-width: 1280px) {
+    right: 20px;
+  }
+}
