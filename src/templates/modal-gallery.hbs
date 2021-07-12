@@ -1,5 +1,6 @@
+<img src={{images.5.url}} alt='{{name}}' class='modal-img-gallery' />
 <div class='modal-gallery'>
-  <img src={{images.5.url}} alt='{{name}}' class='modal-img-gallery' />
+  
   <div class='poster-img'>
     <img class='modal-img' src={{images.5.url}} alt='{{name}}' />
   </div>
@@ -33,15 +34,16 @@
           {{this.max}}
           {{this.currency}}
         </p>
-         <a href={{../url}} class="btn-buy-ticket link" target="_blank">BUY TICKETS</a>
+         <a href={{../url}} class="btn-buy-ticket link animate__animated animate__flash" target="_blank">BUY TICKETS</a>
       {{/each}}
     {{/if}}
     {{#unless priceRanges}}
       <p class='info-text prise-text'>Tickets are not yet available. Please, try again later.</p>
     {{/unless}}
+     </div>
+
+</div>
     <button type='button' class='button button-more-info' data-action='more-info'>
       MORE FROM THIS AUTHOR
     </button>
-  </div>
-
-</div>
+ 
