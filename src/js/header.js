@@ -9,7 +9,6 @@ import setPagination from './pagination';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
 
-
 const refs = {
     gallery: document.querySelector('#gallery-js'),
 
@@ -102,5 +101,13 @@ function onClicBody(event) {
     document.body.removeEventListener('click', onClicBody)
 }
 
-
-
+// title
+window.onload = function () {
+    setTimeout(() => {
+        const title = document.querySelector('.header-title');
+        title.classList.add('animate-title');
+        title.classList.remove('zoomInUp');
+        title.classList.remove('wow');
+        title.style.removeProperty("animation-name");
+    }, 2000)
+};
