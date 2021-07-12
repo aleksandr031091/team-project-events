@@ -5,6 +5,7 @@ import '@pnotify/core/dist/PNotify.css';
 import contriesArray from '../json/countries.json';
 import apiEvents from './service/api';
 import galleryTmp from '../templates/galleryTmp.hbs';
+import setPagination from './pagination';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
 
@@ -24,6 +25,7 @@ const refs = {
 const refetchData = () => {
     apiEvents.fetchEvents().then(data => {
         const events = data._embedded.events;
+        setPagination(data.page.totalElements);
         const markUp = galleryTmp(events);
         refs.gallery.innerHTML = markUp;
     }).catch(err => {
