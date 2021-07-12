@@ -21,19 +21,24 @@
     <h3 class='info-title'>WHO</h3>
     <p class='info-text'>{{_embedded.attractions.0.name}}</p>
     <h3 class='info-title'>PRICES</h3>
-    {{#each priceRanges}}
-      <p class='info-text price-text'>
-        <svg class='code' aria-label='Штрих-код'>
-          <use href='./images/sprite.svg#icon-code'></use>
-        </svg>
-        {{this.type}}
-        {{this.min}}
-        -
-        {{this.max}}
-        {{this.currency}}
-      </p>
-      <button class='btn-buy-ticket' type='button'>BUY TICKETS</button>
-    {{/each}}
+    {{#if priceRanges}}
+      {{#each priceRanges}}
+        <p class='info-text price-text'>
+          <svg class='code' aria-label='Штрих-код'>
+            <use href='./images/sprite.svg#icon-code'></use>
+          </svg>
+          {{this.type}}
+          {{this.min}}
+          -
+          {{this.max}}
+          {{this.currency}}
+        </p>
+         <a href={{../url}} class="btn-buy-ticket link" target="_blank">BUY TICKETS</a>
+      {{/each}}
+    {{/if}}
+    {{#unless priceRanges}}
+      <p class='info-text prise-text'>Tickets are not yet available. Please, try again later.</p>
+    {{/unless}}
     <button type='button' class='button button-more-info' data-action='more-info'>
       MORE FROM THIS AUTHOR
     </button>

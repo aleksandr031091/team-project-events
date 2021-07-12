@@ -20,7 +20,7 @@ const refs = getRefs();
 
 refs.gallery.addEventListener('click', onGalleryClick);
 refs.button.addEventListener('click', closeOnClick);
-refs.closeLightbox.addEventListener('click', closeOnBackdrop);
+refs.lightbox.addEventListener('click', closeOnBackdrop);
 document.addEventListener('keydown', closeOnEscape);
 
 function onGalleryClick(e) {
