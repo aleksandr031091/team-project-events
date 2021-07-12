@@ -31,16 +31,9 @@
   line-height: 1.22;
   text-align: center;
 
-  color: #dc56c5;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 #dc56c5, 0 2px 0 #c7c5c5, 0 3px 0 #dc56c5, 0 4px 0 #c7c5c5, 0 5px 0 #dc56c5,
-    0 6px 1px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
-    0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3),
-    0 20px 20px rgba(0, 0, 0, 0.1);
-
-  // border-radius: 50%;
-  // text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5, -1px -1px 20px #dc56c5,
-  //   -2px -2px 20px #dc56c5;
+  border-radius: 50%;
+  text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5, -1px -1px 20px #dc56c5,
+    -2px -2px 20px #dc56c5;
 
   @media screen and (min-width: 768px) {
     min-width: 353px;
@@ -122,21 +115,23 @@
 
 .header-loupe-icone {
   fill: $further-text-color;
+  transition: transform 250ms linear;
 
   .btn-search-keyword:hover &,
   .btn-search-keyword:focus & {
     fill: #dc56c5;
+    transform: scale(1.5);
   }
 }
 
 // ----------------------------- Selection of countries
 
 .header-src-country {
+  position: relative;
   z-index: 2;
   position: relative;
   min-width: 270px;
   display: grid;
-  padding: 10px 30px;
 
   background-color: $form-bg-color;
   backdrop-filter: blur(20px);
@@ -153,6 +148,7 @@
 .header-src-country_content {
   display: flex;
   justify-content: space-between;
+  padding: 10px 30px;
 }
 
 .header-src-country_placeholder {
@@ -165,9 +161,9 @@
 // button selection of countries
 
 .btn-selection-countries {
-  padding: 2px;
   border: none;
   background-color: transparent;
+  transition: transform 250ms linear;
 }
 
 .transform-btn {
@@ -197,7 +193,7 @@
   left: 0;
   width: 100%;
 
-  max-height: 171px;
+  height: 171px;
   overflow-y: scroll;
 
   padding-top: 6px;
@@ -208,6 +204,8 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top: 1px solid #939393;
+
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -229,7 +227,19 @@
 }
 
 .dropdown-menu-list.is-hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  outline: 0;
+  outline-offset: 0;
 }
 
 .dropdown-menu-item {
