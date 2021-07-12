@@ -132,6 +132,7 @@
 // ----------------------------- Selection of countries
 
 .header-src-country {
+  z-index: 2;
   position: relative;
   min-width: 270px;
   display: grid;
@@ -195,14 +196,13 @@
   top: 100%;
   left: 0;
   width: 100%;
-  z-index: 5;
+
   max-height: 171px;
   overflow-y: scroll;
 
   padding-top: 6px;
   padding-left: 7px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
+  background: rgba(126, 125, 125, 0.9);
 
   text-align: left;
   border-bottom-left-radius: 20px;
@@ -221,6 +221,10 @@
   }
   &::-webkit-scrollbar-thumb:hover {
     background-color: linear-gradient(45deg, rgb(159, 63, 182), rgb(157, 10, 134));
+  }
+
+  &::-webkit-scrollbar-track-piece:vertical {
+    margin-bottom: 14px;
   }
 }
 
