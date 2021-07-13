@@ -6,12 +6,11 @@ import contriesArray from '../json/countries.json';
 import apiEvents from './service/api';
 import galleryTmp from '../templates/galleryTmp.hbs';
 import setPagination from './pagination';
-import getRefs from './reference';
+import refs from './reference';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
 import { showLoader, isHiddenLoader } from './preload';
 
-const refs = getRefs();
 
 const refetchData = () => {
     showLoader();

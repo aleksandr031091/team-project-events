@@ -1,13 +1,13 @@
-import studentTpl from '../templates/students-modal.hbs';
+import refs from './reference';
 import team from './team';
+
+import studentTpl from '../templates/students-modal.hbs';
+
 import * as basicLightbox from 'basiclightbox';
 import 'basicLightbox/dist/basicLightbox.min.css';
 
-const footerButton = document.querySelector('#footer-button-js');
 
-console.log(footerButton);
-
-footerButton.addEventListener('click', onClick);
+refs.footerButton.addEventListener('click', onClick);
 
 function onClick(e) {
   console.log(e.target);
@@ -19,7 +19,6 @@ function onClick(e) {
   instance.show();
   document.body.classList.add('no-scroll');
   const crossButton = document.querySelector('#cross');
-  console.log(crossButton);
   crossButton.addEventListener('click', () => instance.close());
 }
 
