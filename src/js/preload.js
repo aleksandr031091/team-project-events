@@ -1,11 +1,11 @@
-const preloader = document.querySelector('#preload');
+import refs from './reference';
 
 const showLoader = () => {
-    preloader.classList.remove('visually-hidden');
+    refs.preloader.classList.remove('visually-hidden');
 }
 
 const isHiddenLoader = () => {
-    preloader.classList.add('visually-hidden');
+    refs.preloader.classList.add('visually-hidden');
 }
 
 showLoader();

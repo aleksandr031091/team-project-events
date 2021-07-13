@@ -1,9 +1,9 @@
-import modalGalleryTpl from '../templates/modal-gallery.hbs';
-import getRefs from './reference';
 import apiEvents from '../js/service/api';
+import refs from './reference';
 import renderGallery from './gallery';
 import setPagination from './pagination';
-
+import modalGalleryTpl from '../templates/modal-gallery.hbs';
+import { showLoader, isHiddenLoader } from './preload';
 // import * as basicLightbox from 'basiclightbox';
 // import 'basicLightbox/dist/basicLightbox.min.css';
 
@@ -18,7 +18,7 @@ import setPagination from './pagination';
 //   document.body.setAttribute('style', 'overflow:hidden');
 // }
 
-const refs = getRefs();
+
 
 refs.gallery.addEventListener('click', onGalleryClick);
 
@@ -29,9 +29,10 @@ function onGalleryClick(e) {
   // e.preventDefault();
   const cardId = e.target.closest('li').dataset.action;
   if (!cardId) return;
+  showLoader();
   apiEvents.fetchEventsById(cardId).then(data => {
     const markUp = modalGalleryTpl(data);
-    console.log(data);
+ 
     // basicLightbox.create(modalGalleryTpl(data)).show();
     // document.body.classList.add('modal-open');
     //
@@ -55,7 +56,7 @@ function onGalleryClick(e) {
         setPagination(data.page.totalElements);
       });
     }
-  });
+  }).finally(isHiddenLoader);
 
     const button = document.querySelector('[data-action="close-lightbox"]')
 
