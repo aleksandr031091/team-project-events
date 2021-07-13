@@ -1,6 +1,8 @@
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
 import getRefs from './reference';
 import apiEvents from '../js/service/api';
+import renderGallery from './gallery';
+import setPagination from './pagination';
 
 // import * as basicLightbox from 'basiclightbox';
 // import 'basicLightbox/dist/basicLightbox.min.css';
@@ -36,6 +38,23 @@ function onGalleryClick(e) {
     refs.contentLightbox.innerHTML = markUp;
     refs.lightbox.classList.add('is-open');
     document.body.classList.add('modal-open');
+    //   получить ссылку на кнопочку, повесить на нее слушателя, в обработчике событий : закрыть модалку,
+    // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
+    // attractions :name , дальше вызываем фетчевентс
+    //
+    const author = document.querySelector('[data-action="more-info"]');
+    author.addEventListener('click', onClickAuthorInfo);
+
+    function onClickAuthorInfo(e) {
+      e.preventDefault();
+      closeOnClick();
+      apiEvents.keyword = data._embedded.attractions[0].name;
+
+      apiEvents.fetchEvents().then(data => {
+        renderGallery(data);
+        setPagination(data.page.totalElements);
+      });
+    }
   });
 }
 

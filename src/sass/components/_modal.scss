@@ -10,7 +10,6 @@
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 595px;
     margin: 0px auto;
   }
@@ -18,10 +17,8 @@
 .poster-img {
   @media screen and (min-width: 768px) {
     display: block;
-    width: 233px;
-    height: 416px;
     margin-right: 30px;
-    padding-bottom: 35px;
+    margin-bottom: 178px;
   }
 }
 
@@ -30,13 +27,14 @@
   z-index: 200;
   top: 0;
   left: 0;
+  overflow-y: scroll;
 
   opacity: 0;
   pointer-events: none;
   width: 100vw;
   height: 100vh;
+  transform: scale(0.95);
 
-  overflow: scroll;
   background: $modal-overlay-color;
   backdrop-filter: blur(3px);
   transition: all var(--timing-function) var(--animation-duration);
@@ -44,11 +42,17 @@
   &.is-open {
     opacity: 1;
     pointer-events: initial;
-    overflow: scroll;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+    padding-top: 180px;
+  }
+  @media screen and (min-width: 1280px) {
+    overflow: hidden;
   }
 }
 .lightbox__content {
-  overflow: scroll;
   position: relative;
   padding-top: 75px;
   padding-bottom: 75px;
@@ -57,7 +61,7 @@
   margin-bottom: 100px;
   background-color: $modal-bg-color;
   border-radius: 150px 0px;
-  transform: scale(0.95);
+
   transition: transform var(--timing-function) var(--animation-duration);
 
   @media screen and (min-width: 768px) {
@@ -65,7 +69,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 650px;
-    max-height: auto;
+
     padding-top: 28px;
     padding-bottom: 56px;
     padding-right: 20px;
@@ -76,7 +80,6 @@
 
   @media screen and (min-width: 1280px) {
     width: 950px;
-    overflow: hidden;
   }
 }
 
@@ -102,8 +105,8 @@
 @media screen and (min-width: 768px) {
   .modal-img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 233px;
+    height: 416px;
     object-fit: cover;
   }
 }
@@ -112,6 +115,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 .info-title {
   font-style: normal;
@@ -129,6 +137,10 @@
   text-align: center;
   margin-bottom: 10px;
   color: #000000;
+
+  @media screen and (min-width: 768px) {
+    text-align: start;
+  }
 }
 .code {
   display: inline-block;
@@ -184,7 +196,7 @@
   fill: $modal-accent-color;
 
   @media screen and (min-width: 768px) {
-    top: 5px;
+    top: 10px;
     right: 80px;
   }
 
