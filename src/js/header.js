@@ -8,6 +8,7 @@ import galleryTmp from '../templates/galleryTmp.hbs';
 import setPagination from './pagination';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
+import { showLoader, isHiddenLoader } from './preload';
 
 const refs = {
     gallery: document.querySelector('#gallery-js'),
@@ -22,6 +23,7 @@ const refs = {
 };
 
 const refetchData = () => {
+    showLoader();
     apiEvents.fetchEvents().then(data => {
         const events = data._embedded.events;
         setPagination(data.page.totalElements);
@@ -32,7 +34,7 @@ const refetchData = () => {
             text: 'Sorry, no event found 😭',
             delay: 2000,
         });
-    });
+    }).finally(isHiddenLoader);
 };
 
 // -------------------------------------Event search by keyword
@@ -48,6 +50,8 @@ const onSubmitRequestEvents = (event) => {
         });
     };
     apiEvents.keyword = enteredKeyword;
+
+    showLoader();
 
     refetchData();
     form.reset();
@@ -72,6 +76,8 @@ const onClickCountryName = (event) => {
     apiEvents.countryCode = getCountryCode;
 
     refs.dropdownPlaceholder.textContent = event.target.textContent;
+
+    showLoader();
 
     refetchData();
     closeOpenDropdownMenu();
@@ -111,3 +117,4 @@ window.onload = function () {
         title.style.removeProperty("animation-name");
     }, 2000)
 };
+
