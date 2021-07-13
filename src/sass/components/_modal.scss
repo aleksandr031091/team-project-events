@@ -6,12 +6,12 @@
   display: none;
 }
 
-.lightbox{
+.lightbox {
   position: fixed;
   z-index: 200;
   width: 100vw;
   height: 100vh;
-  
+
   &.is-open {
     opacity: 1;
     pointer-events: initial;
@@ -56,8 +56,6 @@
   overflow: hidden;
 }
 
-
-
 .lightbox__content {
   flex-direction: column;
   position: relative;
@@ -96,7 +94,6 @@
   }
 }
 
-
 .modal-img-gallery {
   display: block;
   margin-bottom: 18px;
@@ -111,27 +108,24 @@
     margin-bottom: 43px;
     width: 70px;
     height: 70px;
-  
   }
-   @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 40px;
     width: 132px;
     height: 132px;
   }
 }
 
-.modal-gallery{
-margin-bottom: 25px;
+.modal-gallery {
+  margin-bottom: 25px;
 
- @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     display: flex;
     margin-bottom: 43px;
- 
   }
-   @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
     margin-bottom: 45px;
-
   }
 }
 
@@ -139,13 +133,12 @@ margin-bottom: 25px;
   @media screen and (min-width: 768px) {
     // margin-right: 30px;
     width: 100%;
-    
+
     // display: block;
     // width: 233px;
     // height: 416px;
     // margin-right: 30px;
     // margin-bottom: 178px;
-   
   }
 }
 
@@ -164,17 +157,14 @@ margin-bottom: 25px;
 
 @media screen and (min-width: 1280px) {
   .modal-img {
-    
     // margin-right: 0;
     width: 360px;
     height: 641px;
     // margin-right: 30px;
-   
 
     // object-fit: contain;
   }
 }
-
 
 .modal-info {
   display: flex;
@@ -198,12 +188,11 @@ margin-bottom: 25px;
   color: $accent-color;
   margin-bottom: 5px;
 
-    @media screen and (min-width: 1280px) {
-   font-size: 24px;
-   line-height: 1.2;
-   margin-bottom: 7px;
+  @media screen and (min-width: 1280px) {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 7px;
   }
- 
 }
 
 .info-text {
@@ -218,10 +207,10 @@ margin-bottom: 25px;
     text-align: start;
   }
 
-    @media screen and (min-width: 1280px) {
-   font-size: 18px;
-   line-height: 1.2;
-   margin-bottom: 20px;
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 }
 
@@ -241,7 +230,6 @@ margin-bottom: 25px;
   cursor: pointer;
   width: 145px;
   height: 40px;
- 
 
   font-weight: 500;
   font-size: 16px;
@@ -250,10 +238,9 @@ margin-bottom: 25px;
   background: $modal-accent-color;
   border-radius: 5px;
 
-     @media screen and (min-width: 1280px) {
-   font-size: 18px;
-   line-height: 1.2;
-  
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 1.2;
   }
 }
 
@@ -267,7 +254,7 @@ margin-bottom: 25px;
   box-sizing: border-box;
   border-radius: 5px;
   color: $modal-accent-color;
-   background-color: $modal-bg-color;
+  background-color: $modal-bg-color;
   box-shadow: none;
   // transition: all var(--timing-function) var(--animation-duration);
 }
@@ -285,6 +272,7 @@ margin-bottom: 25px;
   border-radius: 50%;
   background-color: $modal-bg-color;
   font-size: 25px;
+  cursor: pointer;
 
   color: $modal-accent-color;
 
@@ -295,6 +283,6 @@ margin-bottom: 25px;
 
   @media screen and (min-width: 1280px) {
     top: 15px;
-  font-size: 40px;
+    font-size: 40px;
   }
 }
