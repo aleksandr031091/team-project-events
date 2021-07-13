@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import './js/preload';
 import './js/scrollToTop';
 import './js/header';
 import './js/gallery';
