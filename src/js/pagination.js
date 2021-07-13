@@ -1,43 +1,16 @@
 import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
 import apiEvents from '../js/service/api';
 import renderGallery from './gallery';
 
-// apiEvents.fetchEvents().then(events => {
-//   // const options = {
-//   //   totalItems: events.page.totalElements,
-//   //   itemsPerPage: events.page.size,
-//   //   visiblePages: 5,
-//   //   page: events.page.number + 1,
-//   //   centerAlign: false,
-//   //   firstItemClassName: 'tui-first-child',
-//   //   lastItemClassName: 'tui-last-child',
-//   // };
-
-//   // const pagination = new Pagination('pagination', options);
-
-//   // pagination.on('afterMove', event => {
-//   //   apiEvents.page = event.page - 1;
-//   //   apiEvents.fetchEvents().then(events => {
-//   //     console.log(events);
-//   //     renderGallery(events);
-//   //   });
-//   // });
-//   renderGallery(events);
-// });
-
 function setPagination(totalItems) {
-  apiEvents.size = 20; //window.innerWidth
-  console.log(totalItems);
+  apiEvents.size = 20;
   const options = {
     totalItems: totalItems < 1000 ? totalItems : 1000,
-    itemsPerPage: apiEvents.size, // window.innerWidth
+    itemsPerPage: apiEvents.size,
 
-    visiblePages: 5, // window.innerWidth
+    visiblePages: window.innerWidth < 768 ? 3 : 5,
     page: 1,
-    centerAlign: false,
-    // firstItemClassName: 'tui-first-child',
-    // lastItemClassName: 'tui-last-child',
+    centerAlign: true,
   };
 
   const pagination = new Pagination('pagination', options);
@@ -45,7 +18,6 @@ function setPagination(totalItems) {
   pagination.on('afterMove', event => {
     apiEvents.page = event.page - 1;
     apiEvents.fetchEvents().then(events => {
-      console.log(events);
       renderGallery(events);
     });
   });

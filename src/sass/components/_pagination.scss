@@ -27,38 +27,43 @@
   width: 30px;
   height: 30px;
   padding: 8px 0 6px;
-  margin-left: 8px;
-  color: white;
-  background-color: black;
+  color: $basic-text-color;
+  background-color: $header-bg-color;
   font-size: 12px;
   font-weight: normal;
   line-height: 1;
   text-decoration: none;
   vertical-align: middle;
-  border: 1px solid #ddd;
   border-radius: 10px 0px;
+  @media screen and (min-width: 768px) {
+    margin-left: 8px;
+  }
+}
+
+.tui-pagination .tui-page-btn:first-child {
+  margin-left: 0;
 }
 
 .tui-pagination .tui-page-btn:hover {
-  color: #dc56c5;
-  background: black;
-  border: 1px solid #dc56c5;
+  color: $accent-color;
+  background: $header-bg-color;
+  border: 1px solid $accent-color;
   border-radius: 10px 0px;
 }
 
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
-  color: #dc56c5;
-  background: black;
-  border: 1px solid #dc56c5;
+  color: $accent-color;
+  background: $header-bg-color;
+  border: 1px solid $accent-color;
 
   border-radius: 10px 0px;
   cursor: default;
 }
 
-.tui-pagination .tui-is-selected:hover {
-  background-color: #fff2fd;
-}
+// .tui-pagination .tui-is-selected:hover {
+//   background-color: #fff2fd;
+// }
 
 .tui-pagination .tui-first-child.tui-is-selected,
 .tui-pagination strong.tui-first-child {
@@ -68,12 +73,14 @@
 // .tui-pagination .tui-prev-is-ellip {
 //   border-right: 0;
 // }
+// @media screen and (min-width: 768px)
 
 .tui-pagination .tui-ico-first,
 .tui-pagination .tui-ico-prev,
 .tui-pagination .tui-ico-next,
 .tui-pagination .tui-ico-last,
 .tui-pagination .tui-ico-ellip {
+  // visibility: hidden;
   background: url('./../images/pagination/sp_btn.png') no-repeat 0 0;
   display: inline-block;
   vertical-align: middle;
@@ -86,9 +93,9 @@
   line-height: 1;
 }
 
-.tui-pagination .tui-next {
-  margin-left: 10px;
-}
+// .tui-pagination .tui-next {
+//   margin-left: 10px;
+// }
 
 .tui-pagination .tui-ico-first {
   width: 11px;
@@ -123,7 +130,7 @@
 }
 
 .tui-pagination .tui-is-disabled:hover {
-  background: #fff;
+  background: $basic-text-color;
   cursor: default;
 }
 
