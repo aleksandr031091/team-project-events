@@ -6,21 +6,12 @@ import contriesArray from '../json/countries.json';
 import apiEvents from './service/api';
 import galleryTmp from '../templates/galleryTmp.hbs';
 import setPagination from './pagination';
+import getRefs from './reference';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
 import { showLoader, isHiddenLoader } from './preload';
 
-const refs = {
-    gallery: document.querySelector('#gallery-js'),
-
-    formSearch: document.querySelector('#formSearch-js'),
-    btnSearch: document.querySelector('#btnSearch-js'),
-
-    searchCountryContainer: document.querySelector('#src-country-js'),
-    dropdownMenu: document.querySelector('#dropdown-js'),
-    dropdownBtn: document.querySelector('#dropdownBtn'),
-    dropdownPlaceholder: document.querySelector('#dropdownPlaceholder-js'),
-};
+const refs = getRefs();
 
 const refetchData = () => {
     showLoader();
@@ -37,7 +28,7 @@ const refetchData = () => {
     }).finally(isHiddenLoader);
 };
 
-// -------------------------------------Event search by keyword
+// ------------------------------------ Event search by keyword
 
 const onSubmitRequestEvents = (event) => {
     event.preventDefault();
@@ -59,7 +50,7 @@ const onSubmitRequestEvents = (event) => {
 
 refs.formSearch.addEventListener('submit', onSubmitRequestEvents);
 
-// --------------------------------------Event search by country
+// ------------------------------------- Event search by country
 
 const closeOpenDropdownMenu = () => {
     refs.searchCountryContainer.classList.toggle('only-border-radius-top');

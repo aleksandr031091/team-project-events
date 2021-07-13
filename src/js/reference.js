@@ -7,5 +7,14 @@ export default function getRefs() {
     button: document.querySelector('[data-action="close-lightbox"]'),
     contentLightbox: document.querySelector('.lightbox__content'),
     lightboxOverlay: document.querySelector('.lightbox__overlay'),
+
+    // header nodes
+    formSearch: document.querySelector('#formSearch-js'),
+    btnSearch: document.querySelector('#btnSearch-js'),
+
+    searchCountryContainer: document.querySelector('#src-country-js'),
+    dropdownMenu: document.querySelector('#dropdown-js'),
+    dropdownBtn: document.querySelector('#dropdownBtn'),
+    dropdownPlaceholder: document.querySelector('#dropdownPlaceholder-js'),
   };
 }
