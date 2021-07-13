@@ -57,7 +57,7 @@ function onGalleryClick(e) {
     }
   });
 
-    const button = document.querySelector('[data-action="close-lightbox"]')
+  const button = document.querySelector('[data-action="close-lightbox"]');
 
   button.addEventListener('click', closeOnClick);
 }
@@ -68,6 +68,10 @@ function closeOnClick() {
 }
 
 function closeOnBackdrop(e) {
+  if (e.target) {
+    refs.lightbox.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+  }
   if (e.target === e.currentTarget) {
     closeOnClick();
   }
