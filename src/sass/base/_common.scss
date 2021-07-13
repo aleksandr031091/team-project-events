@@ -18,6 +18,8 @@ body {
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.9);
 
+  overflow: initial;
+
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
@@ -42,6 +44,12 @@ body {
         background-image: url(../images/back-ground-image/bg-desktop@2x.png);
       }
     }
+  }
+}
+
+.no-scroll {
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
   }
 }
 

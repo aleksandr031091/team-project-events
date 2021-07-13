@@ -4,12 +4,35 @@ import * as basicLightbox from 'basiclightbox';
 import 'basicLightbox/dist/basicLightbox.min.css';
 
 const footerButton = document.querySelector('#footer-button-js');
-const crossButton = document.querySelector('#cross');
+
 console.log(footerButton);
 
-footerButton.addEventListener('click', onKlick);
+footerButton.addEventListener('click', onClick);
 
-function onKlick(e) {
+function onClick(e) {
   console.log(e.target);
-  basicLightbox.create(studentTpl(team)).show();
+  const instance = basicLightbox.create(studentTpl(team), {
+    onClose: () => {
+      document.body.classList.remove('no-scroll');
+    },
+  });
+  instance.show();
+  document.body.classList.add('no-scroll');
+  const crossButton = document.querySelector('#cross');
+  console.log(crossButton);
+  crossButton.addEventListener('click', () => instance.close());
 }
+
+// function onClick(e) {
+//   console.log(e.target);
+//   const instance = basicLightbox.create(studentTpl(team), {
+//     onClose: () => {
+//       document.body.style.overflow = 'initial';
+//     },
+//   });
+//   instance.show();
+//   document.body.style.overflow = 'hidden';
+//   const crossButton = document.querySelector('#cross');
+//   console.log(crossButton);
+//   crossButton.addEventListener('click', () => instance.close());
+// }
