@@ -21,7 +21,7 @@ import setPagination from './pagination';
 const refs = getRefs();
 
 refs.gallery.addEventListener('click', onGalleryClick);
-refs.button.addEventListener('click', closeOnClick);
+
 refs.lightbox.addEventListener('click', closeOnBackdrop);
 document.addEventListener('keydown', closeOnEscape);
 
@@ -56,6 +56,10 @@ function onGalleryClick(e) {
       });
     }
   });
+
+    const button = document.querySelector('[data-action="close-lightbox"]')
+
+  button.addEventListener('click', closeOnClick);
 }
 
 function closeOnClick() {
