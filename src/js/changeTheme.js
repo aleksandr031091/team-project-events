@@ -8,7 +8,7 @@ const scrollRef = document.querySelector('.scroll.scroll-top');
 const footerRef = document.querySelector('.footer__container');
 
 console.log(scrollRef);
-const refs = getRefs();
+// const refs = getRefs();
 
 const Theme = {
   LIGHT: 'light-theme',

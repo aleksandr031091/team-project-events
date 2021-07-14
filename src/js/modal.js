@@ -35,28 +35,17 @@ function onGalleryClick(e) {
       const markUp = modalGalleryTpl(data);
 
 
-    // basicLightbox.create(modalGalleryTpl(data)).show();
-    // document.body.classList.add('modal-open');
-    //
-    refs.contentLightbox.innerHTML = markUp;
-    refs.lightbox.classList.add('is-open');
-    document.body.classList.add('modal-open');
-    //   получить ссылку на кнопочку, повесить на нее слушателя, в обработчике событий : закрыть модалку,
-    // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
-    // attractions :name , дальше вызываем фетчевентс
-    //
-    const author = document.querySelector('[data-action="more-info"]');
-    author.addEventListener('click', onClickAuthorInfo);
-
-
+      // basicLightbox.create(modalGalleryTpl(data)).show();
+      // document.body.classList.add('modal-open');
+      //
       refs.contentLightbox.innerHTML = markUp;
       refs.lightbox.classList.add('is-open');
       document.body.classList.add('modal-open');
-      //   получить ссылку на кнопочку, повесить на нее слушателя,
-      // в обработчике событий: закрыть модалку,
+      //   получить ссылку на кнопочку, повесить на нее слушателя, в обработчике событий : закрыть модалку,
       // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
       // attractions :name , дальше вызываем фетчевентс
       //
+  
       const author = document.querySelector('[data-action="more-info"]');
       author.addEventListener('click', onClickAuthorInfo);
       const button = document.querySelector('[data-action="close-lightbox"]');
@@ -69,37 +58,28 @@ function onGalleryClick(e) {
         apiEvents.keyword = data._embedded.attractions[0].name;
         apiEvents.resetPage();
 
-      apiEvents.fetchEvents().then(data => {
-        renderGallery(data);
-        setPagination(data.page.totalElements);
-      });
-    }
-  }).finally(hideLoader);
-
-
         apiEvents.fetchEvents().then(data => {
           renderGallery(data);
           setPagination(data.page.totalElements);
         });
       }
-    })
-    .finally(isHiddenLoader);
+ }).finally(hideLoader)
 }
 
-function closeOnClick() {
-  document.removeEventListener('keydown', closeOnEscape);
-  refs.lightbox.classList.remove('is-open');
-  document.body.classList.remove('modal-open');
-}
-
-function closeOnBackdrop(e) {
-  if (e.target === e.currentTarget) {
-    closeOnClick();
+  function closeOnClick() {
+    document.removeEventListener('keydown', closeOnEscape);
+    refs.lightbox.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
   }
-}
 
-function closeOnEscape(e) {
-  if (e.code === 'Escape') {
-    closeOnClick();
+  function closeOnBackdrop(e) {
+    if (e.target === e.currentTarget) {
+      closeOnClick();
+    }
   }
-}
+
+  function closeOnEscape(e) {
+    if (e.code === 'Escape') {
+      closeOnClick();
+    }
+  }
