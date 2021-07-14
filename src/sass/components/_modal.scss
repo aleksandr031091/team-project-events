@@ -54,9 +54,10 @@
   padding-bottom: 75px;
   padding-left: 12px;
   padding-right: 16px;
-  background-color: $modal-bg-color;
+  background-color: $secondary-text-color;
   border-radius: 150px 0px;
 
+  border: 1px solid $accent-color;
   transition: 300ms;
 
   @media screen and (min-width: 768px) {
@@ -173,7 +174,10 @@
   line-height: 1.2;
   text-align: center;
   
-  color: $info-text-color;
+  color: $basic-text-color;
+  svg{
+    stroke: $basic-text-color;
+  }
 
   @media screen and (min-width: 768px) {
     text-align: start;
