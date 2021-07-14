@@ -7,6 +7,7 @@ const paginationRef = document.querySelector('#pagination');
 const scrollRef = document.querySelector('.scroll.scroll-top');
 const footerRef = document.querySelector('.footer__container');
 
+
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
