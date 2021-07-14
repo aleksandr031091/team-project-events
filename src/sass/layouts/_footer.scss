@@ -39,7 +39,6 @@
   animation-direction: alternate;
 }
 
-/* Приостанавливает анимацию при ховере */
 .footer__button:hover {
   animation-play-state: paused;
 }
@@ -57,7 +56,7 @@
     color: $accent-color;
   }
 }
-/* Бегущая строка */
+
 .footer__runStr {
   height: 22px;
   width: 100%;
@@ -75,7 +74,6 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  text-shadow: -1px -1px 1px;
 }
 
 @keyframes changeRunColor {

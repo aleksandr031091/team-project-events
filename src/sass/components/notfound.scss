@@ -19,8 +19,8 @@
 
   border-radius: 50%;
 
-  text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce, -1px -1px 20px #6d31ce,
-    -2px -2px 20px #6d31ce;
+  text-shadow: 0 0 20px $text-shadow-color, 1px 1px 20px $text-shadow-color, 2px 2px 20px $text-shadow-color, -1px -1px 20px $text-shadow-color,
+    -2px -2px 20px $text-shadow-color;
 
   @media screen and (min-width: 768px) {
     min-width: 353px;
@@ -41,14 +41,15 @@
 
 .not-found_button {
   font-family: Montserrat;
-  color: #939393;
+  color: $not-found-btn-color;
+
   padding: 5px 10px;
   font-size: 10px;
   font-weight: bold;
   line-height: 1.22;
-  background: rgba(255, 255, 255, 0.2);
+  background: $not-found-background-color;
   backdrop-filter: blur(20px);
-  border: gray 2px solid;
+  border: $not-found-btn-border-color 2px solid;
   border-radius: 5px;
   cursor: pointer;
 
@@ -63,7 +64,7 @@
 }
 
 .not-found_button:hover {
-  border: #6d31ce 2px solid;
-  text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce, -1px -1px 20px #6d31ce,
-    -2px -2px 20px #6d31ce;
+  border: $text-shadow-color 2px solid;
+  text-shadow: 0 0 20px $text-shadow-color, 1px 1px 20px $text-shadow-color, 2px 2px 20px $text-shadow-color, -1px -1px 20px $text-shadow-color,
+    -2px -2px 20px $text-shadow-color;
 }

@@ -2,18 +2,56 @@ $basic-text-color: #ffffff;
 $secondary-text-color: #0e0e0e;
 $further-text-color: #939393;
 $accent-color: rgba(220, 86, 197, 1);
-$modal-accent-color: #4c00fe;
-$modal-overlay-color: rgba(32, 13, 29, 0.6);
 $form-bg-color: rgba(255, 255, 255, 0.2);
-$header-bg-color: rgba(11, 11, 11, 0.5);
-$modal-bg-color: #fff2fd;
 $rectangle-color: rgba(220, 86, 197, 0.3);
 $gallery-hover-color: rgb(115, 32, 122);
+
+
+//header
+$formsearch-input-color:#cccccc;
+$header-bg-color: rgba(11, 11, 11, 0.5);
+$dropdown-menu-bc-color:rgba(126, 125, 125, 0.9);
+$dropdown-menu-border-color:#939393;
+$scroll-bar-color:linear-gradient(45deg, rgb(159, 63, 182), rgb(157, 10, 134));
+
+//glow
+$glow-color:#4b0082;
+$glow-midle-color:#6d31ce;
+
+//modal
 $info-text-color: #000000;
+$modal-accent-color: #4c00fe;
+$modal-overlay-color: rgba(32, 13, 29, 0.6);
+$modal-bg-color: #fff2fd;
+
+//pagination
 $tui-pagination:#333;
 $tui-pagination-page-color:#4b96e6;
+
+//pop-up
 $pop-up-color:#415665;
 $pop-up-arge-color:#3dd28d;
 $pop-up-arge-hover-color:#35af76;
 $pop-up-arge-decline-color:#d23d3d;
 $pop-up-arge-decline-hover-color:#af3030;
+
+//preload
+$preload-first-color:cyan;
+$preload-second-color:#dc56c5;
+
+//theme
+$switch-trak-color:#333;
+$switch-marker-color:rgba(0, 0, 0, 0.25);
+$togle-color:#d3d3d4;
+$togle-active-color:#2196f3;
+
+//not found
+$text-shadow-color:#6d31ce;
+$not-found-btn-color:#939393;
+$not-found-background-color:rgba(255, 255, 255, 0.2);
+$not-found-btn-border-color:gray;
+
+//scroll to top
+$scroll-to-top-border-color:rgb(230, 134, 222);
+$scroll-to-top-moz-color:rgba(189, 56, 189, 1);
+$scroll-to-top-shadow-color:#bd38bd;

@@ -43,6 +43,9 @@ body.light-theme {
       stroke: none;
     }
   }
+  .lightbox__button{
+    background-color: $modal-bg-color;
+  }
 }
 
 //modal studens
@@ -67,14 +70,14 @@ body.light-theme {
     }
   }
   .material-icons.white600 {
-    color: black;
+    color: $info-text-color;
   }
 }
 
 //pagination
 .tui-pagination.light-theme .tui-page-btn {
   color: $secondary-text-color;
-  background-color: white;
+  background-color: $basic-text-color;
   font-weight: 700;
 }
 
@@ -138,7 +141,7 @@ body.light-theme {
 //input
 .header-container.light-theme {
   .header-title {
-    color: white;
+    color: $basic-text-color;
   }
   .form-search-keyword_input {
     background-color: $header-bg-color;
@@ -218,7 +221,7 @@ body.light-theme {
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #333;
+  background-color: $switch-trak-color;
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -226,19 +229,19 @@ body.light-theme {
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
+  background-color: $basic-text-color;
   width: 26px;
   height: 26px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px $switch-marker-color;
   transform: translateX(3px);
   transition: transform 250ms var(--timing-function);
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
+  background-color: $togle-color;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -247,7 +250,7 @@ body.light-theme {
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #2196f3;
+  box-shadow: 0 0 0 3px $togle-active-color;
 }
 
 .is-hidden {

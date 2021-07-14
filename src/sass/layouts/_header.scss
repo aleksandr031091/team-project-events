@@ -33,8 +33,8 @@
 
   border-radius: 50%;
 
-  text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5, -1px -1px 20px #dc56c5,
-    -2px -2px 20px #dc56c5;
+  text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color, -1px -1px 20px $preload-second-color,
+    -2px -2px 20px $preload-second-color;
 
   @media screen and (min-width: 768px) {
     min-width: 353px;
@@ -54,59 +54,59 @@
 }
 
 .animate-title {
-  text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5, -1px -1px 20px #dc56c5,
-    -2px -2px 20px #dc56c5;
+  text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color, -1px -1px 20px $preload-second-color,
+    -2px -2px 20px $preload-second-color;
 
   animation: glow 50s linear infinite alternate;
 
   @keyframes glow {
     0% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     10% {
-      text-shadow: 0 0 20px #4b0082, 1px 1px 20px #4b0082, 2px 2px 20px #4b0082,
-        -1px -1px 20px #4b0082, -2px -2px 20px #4b0082;
+      text-shadow: 0 0 20px $glow-color, 1px 1px 20px $glow-color, 2px 2px 20px $glow-color,
+        -1px -1px 20px $glow-color, -2px -2px 20px $glow-color;
     }
     20% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     30% {
-      text-shadow: 0 0 20px #4b0082, 1px 1px 20px #4b0082, 2px 2px 20px #4b0082,
-        -1px -1px 20px #4b0082, -2px -2px 20px #4b0082;
+      text-shadow: 0 0 20px $glow-color, 1px 1px 20px $glow-color, 2px 2px 20px $glow-color,
+        -1px -1px 20px $glow-color, -2px -2px 20px $glow-color;
     }
     35% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     40% {
-      text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce,
-        -1px -1px 20px #6d31ce, -2px -2px 20px #6d31ce;
+      text-shadow: 0 0 20px $glow-midle-color, 1px 1px 20px $glow-midle-color, 2px 2px 20px $glow-midle-color,
+        -1px -1px 20px $glow-midle-color, -2px -2px 20px $glow-midle-color;
     }
     50% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     60% {
-      text-shadow: 0 0 20px #4b0082, 1px 1px 20px #4b0082, 2px 2px 20px #4b0082,
-        -1px -1px 20px #4b0082, -2px -2px 20px #4b0082;
+      text-shadow: 0 0 20px $glow-color, 1px 1px 20px $glow-color, 2px 2px 20px $glow-color,
+        -1px -1px 20px $glow-color, -2px -2px 20px $glow-color;
     }
     70% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     80% {
-      text-shadow: 0 0 20px #4b0082, 1px 1px 20px #4b0082, 2px 2px 20px #4b0082,
-        -1px -1px 20px #4b0082, -2px -2px 20px #4b0082;
+      text-shadow: 0 0 20px $glow-color, 1px 1px 20px $glow-color, 2px 2px 20px $glow-color,
+        -1px -1px 20px $glow-color, -2px -2px 20px $glow-color;
     }
     90% {
-      text-shadow: 0 0 20px #dc56c5, 1px 1px 20px #dc56c5, 2px 2px 20px #dc56c5,
-        -1px -1px 20px #dc56c5, -2px -2px 20px #dc56c5;
+      text-shadow: 0 0 20px $preload-second-color, 1px 1px 20px $preload-second-color, 2px 2px 20px $preload-second-color,
+        -1px -1px 20px $preload-second-color, -2px -2px 20px $preload-second-color;
     }
     100% {
-      text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce,
-        -1px -1px 20px #6d31ce, -2px -2px 20px #6d31ce;
+      text-shadow: 0 0 20px $glow-midle-color, 1px 1px 20px $glow-midle-color, 2px 2px 20px $glow-midle-color,
+        -1px -1px 20px $glow-midle-color, -2px -2px 20px $glow-midle-color;
     }
   }
 }
@@ -143,7 +143,7 @@
 
   font-size: 16px;
   line-height: 1.25;
-  color: #cccccc;
+  color: $formsearch-input-color;
 
   border-radius: 20px;
 
@@ -178,7 +178,7 @@
 
   .btn-search-keyword:hover &,
   .btn-search-keyword:focus & {
-    fill: #dc56c5;
+    fill: $preload-second-color;
     transform: scale(1.5);
   }
 }
@@ -231,7 +231,7 @@
 
   .header-triangle-icon:hover,
   .header-triangle-icon:focus {
-    fill: #dc56c5;
+    fill: $preload-second-color;
   }
 }
 
@@ -240,7 +240,7 @@
 
   &:hover,
   &:focus {
-    fill: #dc56c5;
+    fill: $preload-second-color;
   }
 }
 
@@ -257,12 +257,12 @@
 
   padding-top: 6px;
   padding-left: 7px;
-  background: rgba(126, 125, 125, 0.9);
+  background: $dropdown-menu-bc-color;
 
   text-align: left;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border-top: 1px solid #939393;
+  border-top: 1px solid $dropdown-menu-border-color;
 
   transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -273,11 +273,11 @@
 
   &::-webkit-scrollbar-thumb {
     height: 43px;
-    background-color: #939393;
+    background-color: $dropdown-menu-border-color;
     border-radius: 20px;
   }
   &::-webkit-scrollbar-thumb:hover {
-    background-color: linear-gradient(45deg, rgb(159, 63, 182), rgb(157, 10, 134));
+    background-color: $scroll-bar-color;
   }
 
   &::-webkit-scrollbar-track-piece:vertical {
@@ -305,7 +305,7 @@
   padding-left: 7px;
   &:hover,
   &:focus {
-    background-color: #dc56c5;
+    background-color: $preload-second-color;
   }
 }
 
@@ -314,5 +314,5 @@
   font-size: 16px;
   line-height: 1.25;
 
-  color: #cccccc;
+  color: $formsearch-input-color;
 }

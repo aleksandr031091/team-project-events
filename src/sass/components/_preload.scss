@@ -22,7 +22,7 @@
 .wave {
   width: 5px;
   height: 30px;
-  background: linear-gradient(45deg, cyan, #dc56c5);
+  background: linear-gradient(45deg, $preload-first-color, $preload-second-color);
   margin: 5px;
   animation: wave 1s linear infinite;
   border-radius: 20px;
