@@ -6,7 +6,7 @@ const lightboxRef = document.querySelector('.lightbox');
 const paginationRef = document.querySelector('#pagination');
 const scrollRef = document.querySelector('.scroll.scroll-top');
 const footerRef = document.querySelector('.footer__container');
-
+const headerContainerRef = document.querySelector('.header-container');
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -23,6 +23,7 @@ function onChangeTheme(e) {
   paginationRef.classList.toggle(Theme.DARK);
   scrollRef.classList.toggle(Theme.DARK);
   footerRef.classList.toggle(Theme.DARK);
+  headerContainerRef.classList.toggle(Theme.DARK);
 
   localStorage.setItem('darkTheme', darkThemeChange);
   //   localStorage.setItem('darkThemeBox', darkThemeLightbox);
@@ -47,5 +48,6 @@ function populateTheme() {
     paginationRef.classList.add(Theme.DARK);
     scrollRef.classList.add(Theme.DARK);
     footerRef.classList.add(Theme.DARK);
+    headerContainerRef.classList.add(Theme.DARK);
   }
 }
