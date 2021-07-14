@@ -9,7 +9,7 @@ import setPagination from './pagination';
 import refs from './reference';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
 
 
 const refetchData = () => {
@@ -24,7 +24,7 @@ const refetchData = () => {
             text: 'Sorry, no event found 😭',
             delay: 2000,
         });
-    }).finally(isHiddenLoader);
+    }).finally(hideLoader);
 };
 
 // ------------------------------------ Event search by keyword
@@ -39,19 +39,19 @@ const onSubmitRequestEvents = (event) => {
             delay: 2000,
         });
     };
+
+    apiEvents.resetPage();
+
     apiEvents.keyword = enteredKeyword;
 
-    showLoader();
-
     refetchData();
-    form.reset();
 };
 
 refs.formSearch.addEventListener('submit', onSubmitRequestEvents);
 
 // ------------------------------------- Event search by country
 
-const closeOpenDropdownMenu = () => {
+const toggleDropdownMenu = () => {
     refs.searchCountryContainer.classList.toggle('only-border-radius-top');
     refs.dropdownMenu.classList.toggle('is-hidden');
     refs.dropdownBtn.classList.toggle('transform-btn');
@@ -65,12 +65,12 @@ const onClickCountryName = (event) => {
 
     apiEvents.countryCode = getCountryCode;
 
+    apiEvents.resetPage();
+
     refs.dropdownPlaceholder.textContent = event.target.textContent;
 
-    showLoader();
-
     refetchData();
-    closeOpenDropdownMenu();
+    toggleDropdownMenu();
     document.body.removeEventListener('click', onClicBody);
 };
 
@@ -81,7 +81,7 @@ const markup = () => {
 };
 
 const onClickDropdownMenu = (event) => {
-    closeOpenDropdownMenu();
+    toggleDropdownMenu();
     document.body.addEventListener('click', onClicBody)
     markup();
 };
@@ -93,7 +93,7 @@ refs.dropdownMenu.addEventListener('click', onClickCountryName);
 
 function onClicBody(event) {
     if (event.target.closest('#src-country-js') === refs.searchCountryContainer) return false;
-    closeOpenDropdownMenu();
+    toggleDropdownMenu();
     document.body.removeEventListener('click', onClicBody)
 }
 

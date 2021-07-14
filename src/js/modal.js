@@ -3,7 +3,7 @@ import refs from './reference';
 import renderGallery from './gallery';
 import setPagination from './pagination';
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
 // import * as basicLightbox from 'basiclightbox';
 // import 'basicLightbox/dist/basicLightbox.min.css';
 
@@ -28,10 +28,26 @@ function onGalleryClick(e) {
   const cardId = e.target.closest('li').dataset.action;
   if (!cardId) return;
   showLoader();
+
   apiEvents
     .fetchEventsById(cardId)
     .then(data => {
       const markUp = modalGalleryTpl(data);
+
+
+    // basicLightbox.create(modalGalleryTpl(data)).show();
+    // document.body.classList.add('modal-open');
+    //
+    refs.contentLightbox.innerHTML = markUp;
+    refs.lightbox.classList.add('is-open');
+    document.body.classList.add('modal-open');
+    //   получить ссылку на кнопочку, повесить на нее слушателя, в обработчике событий : закрыть модалку,
+    // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
+    // attractions :name , дальше вызываем фетчевентс
+    //
+    const author = document.querySelector('[data-action="more-info"]');
+    author.addEventListener('click', onClickAuthorInfo);
+
 
       refs.contentLightbox.innerHTML = markUp;
       refs.lightbox.classList.add('is-open');
@@ -46,11 +62,20 @@ function onGalleryClick(e) {
       const button = document.querySelector('[data-action="close-lightbox"]');
       button.addEventListener('click', closeOnClick);
 
+
       function onClickAuthorInfo(e) {
         e.preventDefault();
         closeOnClick();
         apiEvents.keyword = data._embedded.attractions[0].name;
         apiEvents.resetPage();
+
+      apiEvents.fetchEvents().then(data => {
+        renderGallery(data);
+        setPagination(data.page.totalElements);
+      });
+    }
+  }).finally(hideLoader);
+
 
         apiEvents.fetchEvents().then(data => {
           renderGallery(data);
