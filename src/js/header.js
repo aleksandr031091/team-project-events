@@ -92,7 +92,6 @@ const onClickDropdownMenu = (event) => {
 refs.searchCountryContainer.addEventListener('click', onClickDropdownMenu);
 refs.dropdownMenu.addEventListener('click', onClickCountryName);
 
-// close dropdown-menu with mouseenter
 
 function onClicBody(event) {
     if (event.target.closest('#src-country-js') === refs.searchCountryContainer) return false;

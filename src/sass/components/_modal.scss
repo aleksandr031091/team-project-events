@@ -1,3 +1,4 @@
+
 .modal-img {
   display: none;
 }
@@ -24,12 +25,13 @@
   padding-top: 20px;
   padding-right: 25px;
   padding-left: 25px;
+  
 
   pointer-events: none;
 
   background: $modal-overlay-color;
   backdrop-filter: blur(3px);
-
+ 
   opacity: 0;
   overflow-y: scroll;
 
@@ -52,9 +54,9 @@
   padding-bottom: 75px;
   padding-left: 12px;
   padding-right: 16px;
-  background-color: $secondary-text-color;
+  background-color: $modal-bg-color;
   border-radius: 150px 0px;
-  border: 1px solid $accent-color;
+
   transition: 300ms;
 
   @media screen and (min-width: 768px) {
@@ -68,6 +70,7 @@
 
     border-radius: 300px 0px;
     transform: translate(-50%, -50%);
+ 
   }
 
   @media screen and (min-width: 1280px) {
@@ -84,7 +87,7 @@
   margin-bottom: 18px;
   margin-right: auto;
   margin-left: auto;
-
+  
   border-radius: 50%;
   object-fit: cover;
 
@@ -92,6 +95,7 @@
     width: 70px;
     height: 70px;
     margin-bottom: 43px;
+    
   }
   @media screen and (min-width: 1280px) {
     width: 132px;
@@ -168,8 +172,8 @@
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
-
-  color: $basic-text-color;
+  
+  color: $info-text-color;
 
   @media screen and (min-width: 768px) {
     text-align: start;
@@ -181,7 +185,7 @@
     margin-bottom: 20px;
   }
 }
-.price-text {
+.price-text{
   padding-top: 10px;
 }
 
@@ -191,7 +195,7 @@
   height: 16px;
   margin-right: 13px;
   padding: 0;
-
+  
   fill: currentColor;
 }
 
@@ -199,7 +203,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   width: 145px;
   height: 40px;
 
@@ -218,9 +222,8 @@ transition: 300ms;
   }
 }
 .btn-buy-ticket:hover{
-  //  transform: rotate(2deg);
    transform: scale(1.1);
-   box-shadow: 0px 0px 18px 0px rgb(115, 32, 122);
+   box-shadow: 0px 0px 18px 0px $gallery-hover-color;
   }
 
 
@@ -231,7 +234,7 @@ transition: 300ms;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid $modal-accent-color;
-  // box-sizing: border-box;
+
   border-radius: 5px;
   color: $modal-accent-color;
   background-color: $modal-bg-color;
@@ -242,9 +245,8 @@ transition: 300ms;
   
 }
 .button-more-info:hover{
-  //  transform: rotate(2deg);
   transform: scale(1.1);
-  box-shadow: 0px 0px 18px 0px rgb(115, 32, 122);
+  box-shadow: 0px 0px 18px 0px $gallery-hover-color;
   }
 
 .lightbox__button {

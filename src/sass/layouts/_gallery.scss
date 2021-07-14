@@ -8,27 +8,27 @@
     margin-top: -58px;
   }
   @media screen and (min-width: 1280px) {
-    // margin-left: -70px;
     margin-top: -63px;
     padding-bottom: 190px;
   }
 }
+
 .card {
   position: relative;
   display: block;
   flex-basis: calc((100% - 28px) / 2);
   margin-top: 42px;
   text-align: center;
+
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 84px) / 3);
     margin-top: 58px;
-    // margin-left: 28px;
   }
   @media screen and (min-width: 1280px) {
     flex-basis: calc((100% - 142px) / 4);
     margin-top: 63px;
-    // margin-left: 70px;
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -42,16 +42,15 @@
     border-radius: 50px 0px;
 
     background-repeat: no-repeat;
+
     @media screen and (min-width: 768px) {
       left: -48%;
       top: -14px;
       width: 180px;
       height: 177px;
-      // background-image: url(../images/gallery/rectangle-tablet.svg);
     }
     @media screen and (min-width: 1280px) {
       left: -11%;
-      // background-image: url(../images/gallery/rectangle-desktop.svg);
     }
   }
 
@@ -77,6 +76,7 @@
     font-size: 14px;
   }
 }
+
 .link.card__adress {
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
@@ -91,8 +91,9 @@
   -webkit-box-orient: vertical;
   box-orient: vertical;
 }
+
 .material-icons.white600 {
-  color: white;
+  color: $basic-text-color;
 }
 
 .card__img {
@@ -110,9 +111,10 @@
     width: 196px;
   }
 }
+
 .card__img:hover {
   transform: rotate(2deg);
-  box-shadow: 10px 2px 27px 6px rgb(115, 32, 122);
+  box-shadow: 10px 2px 27px 6px $gallery-hover-color;
 }
 
 .little-line {

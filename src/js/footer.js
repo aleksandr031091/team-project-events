@@ -8,7 +8,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 refs.footerButton.addEventListener('click', onClick);
 
 function onClick(e) {
-  console.log(e.target);
+ 
   const instance = basicLightbox.create(studentTpl(team), {
     onClose: () => {
       document.body.classList.remove('no-scroll');
@@ -24,17 +24,3 @@ function onClick(e) {
     document.querySelector('.basicLightbox').classList.add('light-theme');
   }
 }
-
-// function onClick(e) {
-//   console.log(e.target);
-//   const instance = basicLightbox.create(studentTpl(team), {
-//     onClose: () => {
-//       document.body.style.overflow = 'initial';
-//     },
-//   });
-//   instance.show();
-//   document.body.style.overflow = 'hidden';
-//   const crossButton = document.querySelector('#cross');
-//   console.log(crossButton);
-//   crossButton.addEventListener('click', () => instance.close());
-// }

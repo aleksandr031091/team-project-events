@@ -61,26 +61,18 @@
   cursor: default;
 }
 
-// .tui-pagination .tui-is-selected:hover {
-//   background-color: #fff2fd;
-// }
 
 .tui-pagination .tui-first-child.tui-is-selected,
 .tui-pagination strong.tui-first-child {
   margin-left: 8px;
 }
 
-// .tui-pagination .tui-prev-is-ellip {
-//   border-right: 0;
-// }
-// @media screen and (min-width: 768px)
-
 .tui-pagination .tui-ico-first,
 .tui-pagination .tui-ico-prev,
 .tui-pagination .tui-ico-next,
 .tui-pagination .tui-ico-last,
 .tui-pagination .tui-ico-ellip {
-  // visibility: hidden;
+
   background: url('./../images/pagination/sp_btn.png') no-repeat 0 0;
   display: inline-block;
   vertical-align: middle;
@@ -94,9 +86,6 @@
   background-position: -26px -12px;
 }
 
-// .tui-pagination .tui-next {
-//   margin-left: 10px;
-// }
 
 .tui-pagination .tui-ico-first {
   width: 11px;
@@ -164,13 +153,13 @@
   padding: 8px 0 6px;
   font-size: 12px;
   text-align: center;
-  color: #333;
+  color: $tui-pagination;
   border: 0;
   outline: none;
 }
 
 .tui-page-inputs .tui-page-current {
-  color: #4b96e6;
+  color: $tui-pagination-page-color;
 }
 
 .tui-page-separator {

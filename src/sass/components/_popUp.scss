@@ -4,13 +4,13 @@
   z-index: 9999;
   top: 0;
   right: 4%;
-  background: #415665;
+  background: $pop-up-color;
   height: 200px;
   width: 400px;
   border-radius: 15px;
   padding: 20px;
   font-size: 22px;
-  color: #fff;
+  color: $basic-text-color;
   @media screen and (max-width: 767px) {
     text-align: center;
     height: 400px;
@@ -30,7 +30,6 @@
   @media screen and (max-width: 767px) {
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
   }
 }
 .material-icons.info {
@@ -45,29 +44,30 @@
 .popUp-btn {
   font-size: 18px;
   margin-top: 30px;
-  box-shadow: 1px solid black;
+  box-shadow: 1px solid $info-text-color;
   cursor: pointer;
   padding: 15px;
   border-radius: 8px;
 }
 .popUp-agree {
   margin-left: 15px;
-  border: 1px solid #3dd28d;
-  background-color: #3dd28d;
+  border: 1px solid $pop-up-arge-color;
+  background-color: $pop-up-arge-color;
   @media screen and (max-width: 767px) {
     margin-left: 0;
     width: 125px;
   }
 }
+
 .popUp-agree:hover {
-  background-color: #35af76;
-  border: 1px solid #35af76;
+  background-color: $pop-up-arge-hover-color;
+  border: 1px solid $pop-up-arge-hover-color;
 }
 .popUp-decline {
-  border: 1px solid #d23d3d;
-  background-color: #d23d3d;
+  border: 1px solid $pop-up-arge-decline-color;
+  background-color: $pop-up-arge-decline-color;
 }
 .popUp-decline:hover {
-  border: 1px solid #af3030;
-  background-color: #af3030;
+  border: 1px solid $pop-up-arge-decline-hover-color;
+  background-color: $pop-up-arge-decline-hover-color;
 }
