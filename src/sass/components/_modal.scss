@@ -213,7 +213,7 @@
   color: $basic-text-color;
   background: $modal-accent-color;
   border-radius: 5px;
-
+transition: 300ms;
   cursor: pointer;
 
   @media screen and (min-width: 1280px) {
@@ -221,6 +221,12 @@
     line-height: 1.2;
   }
 }
+.btn-buy-ticket:hover{
+  //  transform: rotate(2deg);
+   transform: scale(1.1);
+   box-shadow: 0px 0px 18px 0px rgb(115, 32, 122);
+  }
+
 
 .button-more-info {
   display: block;
@@ -235,7 +241,15 @@
   background-color: $modal-bg-color;
   box-shadow: none;
   transition: 300ms;
+
+  cursor: pointer;
+  
 }
+.button-more-info:hover{
+  //  transform: rotate(2deg);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 18px 0px rgb(115, 32, 122);
+  }
 
 .lightbox__button {
   position: absolute;
@@ -264,3 +278,4 @@
     font-size: 40px;
   }
 }
+

@@ -105,6 +105,7 @@
   height: 100px;
   margin: 0 auto;
   animation: frame-shine 1750ms linear 100ms infinite;
+  object-fit: cover;
 
   @media screen and (min-width: 768px) {
     width: 130px;
