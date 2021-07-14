@@ -8,3 +8,4 @@ import './js/pagination';
 import './js/modal';
 import './js/reference';
 import './js/service/api';
+import './js/changeTheme';
