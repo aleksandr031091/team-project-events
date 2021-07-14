@@ -85,7 +85,7 @@ class Api {
   }
 
   resetPage() {
-    this.page = 1;
+    this.page = 0;
   }
 
   incrementPage() {

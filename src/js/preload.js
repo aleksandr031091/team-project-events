@@ -4,17 +4,17 @@ const showLoader = () => {
     refs.preloader.classList.remove('visually-hidden');
 }
 
-const isHiddenLoader = () => {
+const hideLoader = () => {
     refs.preloader.classList.add('visually-hidden');
 }
 
 showLoader();
 
 setTimeout(() => {
-    isHiddenLoader();
+    hideLoader();
 }, 1000);
 
-export { showLoader, isHiddenLoader };
+export { showLoader, hideLoader };
 
 
 
