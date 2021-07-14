@@ -4,7 +4,7 @@ import team from './team';
 import studentTpl from '../templates/students-modal.hbs';
 
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/dist/basicLightbox.min.css';
+import 'basiclightbox/dist/basicLightbox.min.css';
 
 
 refs.footerButton.addEventListener('click', onClick);
