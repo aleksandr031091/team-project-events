@@ -1,4 +1,4 @@
-import getRefs from './reference';
+import refs from './reference';
 
 const checkboxChangeThemeRef = document.querySelector('#theme-switch-toggle');
 const lightboxRef = document.querySelector('.lightbox');
@@ -6,9 +6,6 @@ const lightboxRef = document.querySelector('.lightbox');
 const paginationRef = document.querySelector('#pagination');
 const scrollRef = document.querySelector('.scroll.scroll-top');
 const footerRef = document.querySelector('.footer__container');
-
-console.log(scrollRef);
-const refs = getRefs();
 
 const Theme = {
   LIGHT: 'light-theme',
