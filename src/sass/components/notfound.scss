@@ -1,4 +1,5 @@
 .not-found {
+  margin: 0 auto;
   text-align: center;
   padding-bottom: 800px;
 }
@@ -41,8 +42,8 @@
 .not-found_button {
   font-family: Montserrat;
   color: #939393;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
   font-weight: bold;
   line-height: 1.22;
   background: rgba(255, 255, 255, 0.2);
@@ -50,9 +51,17 @@
   border: gray 2px solid;
   border-radius: 5px;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+  }
 }
 
-/* Приостанавливает анимацию при ховере */
 .not-found_button:hover {
   border: #6d31ce 2px solid;
   text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce, -1px -1px 20px #6d31ce,

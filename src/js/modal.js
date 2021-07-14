@@ -26,8 +26,12 @@ refs.lightbox.addEventListener('click', closeOnBackdrop);
 function onGalleryClick(e) {
   document.addEventListener('keydown', closeOnEscape);
 
-  const cardId = e.target.closest('li').dataset.action;
+  const liItem = e.target.closest('li');
+  if (!liItem) return;
+
+  const cardId = liItem.dataset.action;
   if (!cardId) return;
+
   showLoader();
 
   apiEvents
