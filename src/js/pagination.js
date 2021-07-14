@@ -1,7 +1,7 @@
 import apiEvents from '../js/service/api';
 import Pagination from 'tui-pagination';
 import renderGallery from './gallery';
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
 
 function setPagination(totalItems) {
   apiEvents.size = 20;
@@ -21,7 +21,7 @@ function setPagination(totalItems) {
     apiEvents.page = event.page - 1;
     apiEvents.fetchEvents().then(events => {
       renderGallery(events);
-    }).finally(isHiddenLoader);
+    }).finally(hideLoader);
   });
 }
 
