@@ -10,44 +10,34 @@ const headerContainerRef = document.querySelector('.header-container');
 
 const Theme = {
   LIGHT: 'light-theme',
-  DARK: 'dark-theme',
 };
 
 checkboxChangeThemeRef.addEventListener('change', onChangeTheme);
 
 function onChangeTheme(e) {
-  const darkThemeChange = document.body.classList.toggle(Theme.DARK);
-  refs.lightbox.classList.toggle(Theme.DARK);
-  refs.gallery.classList.toggle(Theme.DARK);
-  //   const darkThemeModal = modalStudentRef.classList.toggle(Theme.DARK);
-  paginationRef.classList.toggle(Theme.DARK);
-  scrollRef.classList.toggle(Theme.DARK);
-  footerRef.classList.toggle(Theme.DARK);
-  headerContainerRef.classList.toggle(Theme.DARK);
+  const lightThemeChange = document.body.classList.toggle(Theme.LIGHT);
 
-  localStorage.setItem('darkTheme', darkThemeChange);
-  //   localStorage.setItem('darkThemeBox', darkThemeLightbox);
-  //   localStorage.setItem('darkThemeGallery', darkThemeGallery);
-  //   //   localStorage.setItem('darkThemeModal', darkThemeModal);
-  //   localStorage.setItem('darkThemePagination', darkThemePagination);
-  //   localStorage.setItem('darkThemeScroll', darkThemeScroll);
-  //   localStorage.setItem('darkThemeFooter', darkThemeFooter);
-  //   localStorage.setItem('darkThemeHeader', darkThemeHeader);
+  toggleClassList();
+  localStorage.setItem('lightTheme', lightThemeChange);
 }
 populateTheme();
 
 function populateTheme() {
-  const savedPositionTheme = JSON.parse(localStorage.getItem('darkTheme'));
+  const savedPositionTheme = JSON.parse(localStorage.getItem('lightTheme'));
 
   if (savedPositionTheme) {
     checkboxChangeThemeRef.checked = true;
-    document.body.classList.add(Theme.DARK);
-    lightboxRef.classList.add(Theme.DARK);
-    refs.gallery.classList.add(Theme.DARK);
-    // modalStudentRef.classList.add(Theme.DARK);
-    paginationRef.classList.add(Theme.DARK);
-    scrollRef.classList.add(Theme.DARK);
-    footerRef.classList.add(Theme.DARK);
-    headerContainerRef.classList.add(Theme.DARK);
+    document.body.classList.toggle(Theme.LIGHT);
+    toggleClassList();
   }
+}
+
+function toggleClassList() {
+  refs.lightbox.classList.toggle(Theme.LIGHT);
+  refs.gallery.classList.toggle(Theme.LIGHT);
+  //   const darkThemeModal = modalStudentRef.classList.toggle(Theme.DARK);
+  paginationRef.classList.toggle(Theme.LIGHT);
+  scrollRef.classList.toggle(Theme.LIGHT);
+  footerRef.classList.toggle(Theme.LIGHT);
+  headerContainerRef.classList.toggle(Theme.LIGHT);
 }
