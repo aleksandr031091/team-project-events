@@ -10,7 +10,6 @@ refs.gallery.addEventListener('click', onGalleryClick);
 refs.lightbox.addEventListener('click', closeOnBackdrop);
 
 function onGalleryClick(e) {
-  document.addEventListener('keydown', closeOnEscape);
 
   const liItem = e.target.closest('li');
   if (!liItem) return;
@@ -36,6 +35,7 @@ function onGalleryClick(e) {
 
       const button = document.querySelector('[data-action="close-lightbox"]');
       button.addEventListener('click', closeOnClick);
+      document.addEventListener('keydown', closeOnEscape);
     })
     .finally(hideLoader);
 }
