@@ -100,6 +100,3 @@ const apiEvents = new Api();
 
 export default apiEvents;
 
-// import apiEvents from './service/api';
-
-// apiEvents.fetchEvents().then(res => console.log(res));

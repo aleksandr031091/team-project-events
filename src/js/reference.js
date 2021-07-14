@@ -1,11 +1,9 @@
 export default {
-  
     //gallery nodes
     gallery: document.querySelector('#gallery-js'),
     liCardGallery: document.querySelector('.card-container'),
     gallery: document.querySelector('#gallery-js'),
-    
-    // closeModal: document.querySelector('[data-action="close-modal"]'),
+
     //modal gallery nodes
     lightbox: document.querySelector('.js-lightbox'),
     contentLightbox: document.querySelector('.lightbox__content'),
@@ -28,7 +26,13 @@ export default {
     //preloader nodes
     preloader: document.querySelector('#preload'),
   
-
     //btnToTop nodes
-     btnToTop: document.querySelector('.scroll-top'),
+    btnToTop: document.querySelector('.scroll-top'),
+     
+    //teme
+    checkboxChangeThemeRef: document.querySelector('#theme-switch-toggle'),
+    paginationRef: document.querySelector('#pagination'),
+    scrollRef: document.querySelector('.scroll.scroll-top'),
+    footerRef: document.querySelector('.footer__container'),
+    headerContainerRef: document.querySelector('.header-container'),
 }

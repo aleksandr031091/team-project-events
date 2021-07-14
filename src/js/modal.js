@@ -5,20 +5,6 @@ import setPagination from './pagination';
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
 import { showLoader, hideLoader } from './preload';
 
-// import * as basicLightbox from 'basiclightbox';
-// import 'basicLightbox/dist/basicLightbox.min.css';
-
-// function openStudent(event) {
-//   event.preventDefault();
-//   if (event.target !== event.target.dataset.students)
-// basicLightbox
-//   .create(footerModal(icons), {
-//     onClose: () => document.body.removeAttribute('style'),
-//   })
-//   .show();
-//   document.body.setAttribute('style', 'overflow:hidden');
-// }
-
 refs.gallery.addEventListener('click', onGalleryClick);
 
 refs.lightbox.addEventListener('click', closeOnBackdrop);
@@ -39,16 +25,9 @@ function onGalleryClick(e) {
     .then(data => {
       const markUp = modalGalleryTpl(data);
 
-      // basicLightbox.create(modalGalleryTpl(data)).show();
-      // document.body.classList.add('modal-open');
-      //
       refs.contentLightbox.innerHTML = markUp;
       refs.lightbox.classList.add('is-open');
       document.body.classList.add('modal-open');
-      //   получить ссылку на кнопочку, повесить на нее слушателя, в обработчике событий : закрыть модалку,
-      // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
-      // attractions :name , дальше вызываем фетчевентс
-      //
 
       const author = document.querySelector('[data-action="more-info"]');
       author.addEventListener('click', () => {
