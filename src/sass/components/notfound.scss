@@ -1,0 +1,60 @@
+.not-found {
+  text-align: center;
+  padding-bottom: 800px;
+}
+
+.not-found_title {
+  display: block;
+
+  max-width: 212px;
+  margin: 0 auto 25px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.22;
+  text-align: center;
+
+  border-radius: 50%;
+
+  text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce, -1px -1px 20px #6d31ce,
+    -2px -2px 20px #6d31ce;
+
+  @media screen and (min-width: 768px) {
+    min-width: 353px;
+    margin-bottom: 27px;
+
+    font-size: 30px;
+    line-height: 1.23;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-width: 589px;
+    margin-bottom: 52px;
+
+    font-size: 50px;
+    line-height: 1.22;
+  }
+}
+
+.not-found_button {
+  font-family: Montserrat;
+  color: #939393;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.22;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: gray 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Приостанавливает анимацию при ховере */
+.not-found_button:hover {
+  border: #6d31ce 2px solid;
+  text-shadow: 0 0 20px #6d31ce, 1px 1px 20px #6d31ce, 2px 2px 20px #6d31ce, -1px -1px 20px #6d31ce,
+    -2px -2px 20px #6d31ce;
+}
