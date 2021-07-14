@@ -9,7 +9,6 @@ class Api {
     this._totalPage = 0;
     this._keyword = '';
     this._countryCode = '';
-
   }
 
   fetchEvents = async () => {
@@ -77,11 +76,11 @@ class Api {
   }
 
   get totalPage() {
-    this._totalPage
+    this._totalPage;
   }
 
   set totalPage(newTotalPage) {
-    this._totalPage = newTotalPage
+    this._totalPage = newTotalPage;
   }
 
   resetPage() {
