@@ -122,10 +122,12 @@ function notFound() {
     function onClickbackBtn(event) {
 
         apiEvents.countryCode = "";
+        apiEvents.keyword = "";
 
         apiEvents.resetPage();
 
         refs.dropdownPlaceholder.textContent = "Choose country";
+        refs.formSearch.elements.formSearc.value = '';
 
         refetchData();
     };
