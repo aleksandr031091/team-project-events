@@ -10,7 +10,9 @@ import refs from './reference';
 
 import dropdownMenuTpl from '../templates/dropdownMenu.hbs';
 import { showLoader, hideLoader } from './preload';
+import notfoundTpl from '../templates/notfound';
 
+const paginationContainer = document.querySelector("#pagination");
 
 const refetchData = () => {
     showLoader();
@@ -19,11 +21,12 @@ const refetchData = () => {
         setPagination(data.page.totalElements);
         const markUp = galleryTmp(events);
         refs.gallery.innerHTML = markUp;
+        paginationContainer.classList.remove('visually-hidden');
     }).catch(err => {
-        error({
-            text: 'Sorry, no event found 😭',
-            delay: 2000,
-        });
+        refs.gallery.innerHTML = notfoundTpl();
+        paginationContainer.classList.add('visually-hidden');
+        notFound();
+
     }).finally(hideLoader);
 };
 
@@ -67,7 +70,7 @@ const onClickCountryName = (event) => {
 
     apiEvents.resetPage();
 
-    refs.dropdownPlaceholder.textContent = event.target.textContent;
+    refs.dropdownPlaceholder.textContent = getCountryCode ? event.target.textContent : "Choose country";
 
     refetchData();
     toggleDropdownMenu();
@@ -82,7 +85,7 @@ const markup = () => {
 
 const onClickDropdownMenu = (event) => {
     toggleDropdownMenu();
-    document.body.addEventListener('click', onClicBody)
+    document.body.addEventListener('click', onClicBody);
     markup();
 };
 
@@ -94,7 +97,7 @@ refs.dropdownMenu.addEventListener('click', onClickCountryName);
 function onClicBody(event) {
     if (event.target.closest('#src-country-js') === refs.searchCountryContainer) return false;
     toggleDropdownMenu();
-    document.body.removeEventListener('click', onClicBody)
+    document.body.removeEventListener('click', onClicBody);
 }
 
 // title
@@ -107,4 +110,25 @@ window.onload = function () {
         title.style.removeProperty("animation-name");
     }, 2000)
 };
+
+
+// not found logic
+
+function notFound() {
+    const backBtn = document.querySelector('#back-to-main');
+
+    backBtn.addEventListener('click', onClickbackBtn);
+
+    function onClickbackBtn(event) {
+
+        apiEvents.countryCode = "";
+
+        apiEvents.resetPage();
+
+        refs.dropdownPlaceholder.textContent = "Choose country";
+
+        refetchData();
+    };
+};
+
 

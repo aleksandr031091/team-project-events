@@ -1,4 +1,5 @@
 [
+  {"code": "", "name": "All countries"},
   { "code": "US", "name": "United States Of America" },
   { "code":"AI", "name": "Anguilla" },
   { "code":"AD", "name": "Andorra" },
