@@ -4,7 +4,7 @@ import setPagination from './pagination';
 
 import articlesTpl from '../templates/galleryTmp.hbs';
 
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
 
 
 // import articlesTpl from '../templates/galleryTmp.hbs';
@@ -14,7 +14,7 @@ showLoader();
 apiEvents.fetchEvents().then(data => {
   renderGallery(data);
   setPagination(data.page.totalElements);
-}).finally(isHiddenLoader);
+}).finally(hideLoader);
 
 function renderGallery(data) {
   const events = data._embedded.events;
