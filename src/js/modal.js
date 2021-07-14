@@ -3,7 +3,7 @@ import refs from './reference';
 import renderGallery from './gallery';
 import setPagination from './pagination';
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
 // import * as basicLightbox from 'basiclightbox';
 // import 'basicLightbox/dist/basicLightbox.min.css';
 
@@ -32,7 +32,7 @@ function onGalleryClick(e) {
   showLoader();
   apiEvents.fetchEventsById(cardId).then(data => {
     const markUp = modalGalleryTpl(data);
- 
+
     // basicLightbox.create(modalGalleryTpl(data)).show();
     // document.body.classList.add('modal-open');
     //
@@ -56,7 +56,7 @@ function onGalleryClick(e) {
         setPagination(data.page.totalElements);
       });
     }
-  }).finally(isHiddenLoader);
+  }).finally(hideLoader);
 
   const button = document.querySelector('[data-action="close-lightbox"]');
 
