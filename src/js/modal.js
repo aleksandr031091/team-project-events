@@ -3,7 +3,8 @@ import refs from './reference';
 import renderGallery from './gallery';
 import setPagination from './pagination';
 import modalGalleryTpl from '../templates/modal-gallery.hbs';
-import { showLoader, isHiddenLoader } from './preload';
+import { showLoader, hideLoader } from './preload';
+
 // import * as basicLightbox from 'basiclightbox';
 // import 'basicLightbox/dist/basicLightbox.min.css';
 
@@ -55,7 +56,6 @@ function onGalleryClick(e) {
     })
     .finally(hideLoader);
 }
-
 
 function onClickAuthorInfo(data) {
   closeOnClick();
