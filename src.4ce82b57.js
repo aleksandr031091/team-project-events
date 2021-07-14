@@ -66,4 +66,4 @@ var e,n=arguments[3];!function(t){"object"==typeof exports&&"undefined"!=typeof 
 },{"./reference":"qc8C"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/preload"),require("./js/scrollToTop"),require("./js/popUp"),require("./js/header"),require("./js/gallery"),require("./js/footer"),require("./js/pagination"),require("./js/modal"),require("./js/reference"),require("./js/service/api"),require("./js/changeTheme");
 },{"./sass/main.scss":"clu1","./js/preload":"IFE5","./js/scrollToTop":"bdoy","./js/popUp":"CF0O","./js/header":"cGsR","./js/gallery":"chxP","./js/footer":"b5Ik","./js/pagination":"o8lo","./js/modal":"RSqK","./js/reference":"qc8C","./js/service/api":"FG8s","./js/changeTheme":"JW5E"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-events/src.572f3149.js.map
+//# sourceMappingURL=/team-project-events/src.4ce82b57.js.map
