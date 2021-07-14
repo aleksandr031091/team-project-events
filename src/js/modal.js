@@ -34,7 +34,6 @@ function onGalleryClick(e) {
     .then(data => {
       const markUp = modalGalleryTpl(data);
 
-
       // basicLightbox.create(modalGalleryTpl(data)).show();
       // document.body.classList.add('modal-open');
       //
@@ -45,44 +44,43 @@ function onGalleryClick(e) {
       // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
       // attractions :name , дальше вызываем фетчевентс
       //
-  
+
       const author = document.querySelector('[data-action="more-info"]');
-      author.addEventListener('click', onClickAuthorInfo);
+      author.addEventListener('click', () => {
+        onClickAuthorInfo(data);
+      });
       const button = document.querySelector('[data-action="close-lightbox"]');
       button.addEventListener('click', closeOnClick);
-
-
-
-      function onClickAuthorInfo() {
-     
-        closeOnClick();
-        apiEvents.keyword = data._embedded.attractions[0].name;
-        apiEvents.resetPage();
-
-        apiEvents.fetchEvents().then(data => {
-          renderGallery(data);
-          setPagination(data.page.totalElements);
-          refs.formSearch.elements.formSearc.value = apiEvents.keyword
-      
-        });
-      }
- }).finally(hideLoader)
+    })
+    .finally(hideLoader);
 }
 
-  function closeOnClick() {
-    document.removeEventListener('keydown', closeOnEscape);
-    refs.lightbox.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
-  }
+function onClickAuthorInfo(data) {
+  closeOnClick();
+  apiEvents.keyword = data._embedded.attractions[0].name;
+  apiEvents.resetPage();
 
-  function closeOnBackdrop(e) {
-    if (e.target === e.currentTarget) {
-      closeOnClick();
-    }
-  }
+  apiEvents.fetchEvents().then(data => {
+    renderGallery(data);
+    setPagination(data.page.totalElements);
+    refs.formSearch.elements.formSearc.value = apiEvents.keyword;
+  });
+}
 
-  function closeOnEscape(e) {
-    if (e.code === 'Escape') {
-      closeOnClick();
-    }
+function closeOnClick() {
+  document.removeEventListener('keydown', closeOnEscape);
+  refs.lightbox.classList.remove('is-open');
+  document.body.classList.remove('modal-open');
+}
+
+function closeOnBackdrop(e) {
+  if (e.target === e.currentTarget) {
+    closeOnClick();
   }
+}
+
+function closeOnEscape(e) {
+  if (e.code === 'Escape') {
+    closeOnClick();
+  }
+}
