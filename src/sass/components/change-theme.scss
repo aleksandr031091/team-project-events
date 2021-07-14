@@ -1,4 +1,4 @@
-body.dark-theme {
+body.light-theme {
   background-image: url(../images/change-theme/picmobile@1x.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,15 +29,32 @@ body.dark-theme {
     }
   }
 }
-
-.lightbox.dark-theme .lightbox__content {
-  background-color: $further-text-color;
-  color: #fff;
+//modal events
+.lightbox.light-theme {
+  .lightbox__content {
+    background-color: $modal-bg-color;
+  }
+  .info-title {
+    color: $accent-color;
+  }
+  .info-text {
+    color: $secondary-text-color;
+  }
 }
 
+//modal studens
+.basicLightbox.light-theme {
+  .modal-students {
+    background-color: $modal-bg-color;
+    color: $secondary-text-color;
+  }
+  .team__position {
+    color: $secondary-text-color;
+  }
+}
 // gallery
 
-.gallery-overlay.dark-theme {
+.gallery-overlay.light-theme {
   .card {
     &__date {
       color: $secondary-text-color;
@@ -52,48 +69,48 @@ body.dark-theme {
 }
 
 //pagination
-.tui-pagination.dark-theme .tui-page-btn {
+.tui-pagination.light-theme .tui-page-btn {
   color: $secondary-text-color;
   background-color: white;
   font-weight: 700;
 }
 
-.tui-pagination.dark-theme .tui-page-btn:hover {
+.tui-pagination.light-theme .tui-page-btn:hover {
   color: $accent-color;
   border: 2px solid $accent-color;
   border-radius: 10px 0px;
 }
 
-.tui-pagination.dark-theme .tui-ico-prev {
+.tui-pagination.light-theme .tui-ico-prev {
   background-position: -26px 0px;
 }
 
-.tui-pagination.dark-theme .tui-ico-first {
+.tui-pagination.light-theme .tui-ico-first {
   background-position: 0px 0px;
 }
 
-.tui-pagination.dark-theme .tui-ico-next {
+.tui-pagination.light-theme .tui-ico-next {
   background-position: -13px -24px;
 }
 
-.tui-pagination.dark-theme .tui-ico-last {
+.tui-pagination.light-theme .tui-ico-last {
   background-position: 0px -12px;
 }
 
-.tui-pagination.dark-theme .tui-is-disabled .tui-ico-prev {
+.tui-pagination.light-theme .tui-is-disabled .tui-ico-prev {
   background-position: -26px -12px;
 }
 
-.tui-pagination.dark-theme .tui-is-disabled .tui-ico-first {
+.tui-pagination.light-theme .tui-is-disabled .tui-ico-first {
   background-position: -13px 0px;
 }
 
-.tui-pagination.dark-theme .tui-is-disabled .tui-ico-next {
+.tui-pagination.light-theme .tui-is-disabled .tui-ico-next {
   background-position: -21px -24px;
 }
 
 //footer
-.footer__container.dark-theme {
+.footer__container.light-theme {
   .footer__text {
     color: $secondary-text-color;
   }
@@ -124,12 +141,12 @@ body.dark-theme {
   }
 }
 
-.tui-pagination.dark-theme .tui-is-disabled .tui-ico-last {
+.tui-pagination.light-theme .tui-is-disabled .tui-ico-last {
   background-position: -13px -12px;
 }
 
 //input
-.header-container.dark-theme {
+.header-container.light-theme {
   .header-title {
     color: white;
   }
@@ -159,8 +176,8 @@ body.dark-theme {
 
 .toolbar {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 5px;
+  top: 5px;
   display: flex;
   justify-content: flex-end;
   padding: 16px 24px;

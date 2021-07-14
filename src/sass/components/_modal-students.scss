@@ -6,10 +6,11 @@
   padding: 10px;
   height: 700px;
   width: 310px;
-  background-color: $modal-bg-color;
-  color: $secondary-text-color;
+  background-color: $secondary-text-color;
+  color: $basic-text-color;
   overflow-y: scroll;
   height: 100vh;
+  border: 1px solid $accent-color;
 
   @media screen and (min-width: 768px) {
     height: 650px;
@@ -153,7 +154,7 @@
   margin-bottom: 3px;
   font-weight: bold;
   font-size: 12px;
-  color: $secondary-text-color;
+  color: $basic-text-color;
   @media screen and (min-width: 768px) {
     margin-bottom: 5px;
     font-size: 16px;
