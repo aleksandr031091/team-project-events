@@ -3,7 +3,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
   @media screen and (min-width: 768px) {
-    // margin-left: -28px;
+    justify-content: space-evenly;
+    margin-left: -9px;
     margin-top: -58px;
   }
   @media screen and (min-width: 1280px) {
@@ -42,14 +43,14 @@
 
     background-repeat: no-repeat;
     @media screen and (min-width: 768px) {
-      left: -42%;
+      left: -48%;
       top: -14px;
       width: 180px;
       height: 177px;
       // background-image: url(../images/gallery/rectangle-tablet.svg);
     }
     @media screen and (min-width: 1280px) {
-      left: -15%;
+      left: -11%;
       // background-image: url(../images/gallery/rectangle-desktop.svg);
     }
   }

@@ -12,17 +12,11 @@ export default [
     photo: sashaImg,
     alt: 'photo Alex',
     role: 'Team Lead',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/?hl=ru',
+      facebook: 'https://www.facebook.com/profile.php?id=100015199141489',
+      linkedin: 'https://www.linkedin.com/feed/',
+    },
   },
   {
     first_name: 'Yulia',
@@ -30,17 +24,11 @@ export default [
     photo: yuliaImg,
     alt: 'Photo Yulia',
     role: 'Scrum Master',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/julie_dobrova/',
+      facebook: 'https://www.facebook.com/profile.php?id=100011297070190',
+      linkedin: 'https://www.linkedin.com/in/yulia-dobrova-37a335217/',
+    },
   },
   {
     first_name: 'Tofik',
@@ -48,17 +36,11 @@ export default [
     photo: tofikImg,
     alt: 'Photo Tofik',
     role: 'Developer',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/tofikwest/',
+      facebook: 'https://www.facebook.com/tofik.gasanov.54/',
+      linkedin: 'https://www.linkedin.com/in/tofik-hasanov-100598205/',
+    },
   },
   {
     first_name: 'Iryna',
@@ -66,17 +48,11 @@ export default [
     photo: iraImg,
     alt: 'Photo Iryna',
     role: 'Developer',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/?hl=ru',
+      facebook: 'https://uk-ua.facebook.com/',
+      linkedin: 'https://ru.linkedin.com/',
+    },
   },
   {
     first_name: 'Sergiy',
@@ -84,17 +60,11 @@ export default [
     photo: serejaImg,
     alt: 'Photo Sergiy',
     role: 'Developer',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/bula_007x/',
+      facebook: 'https://uk-ua.facebook.com/',
+      linkedin: 'https://ru.linkedin.com/',
+    },
   },
   {
     first_name: 'Natalia',
@@ -102,16 +72,10 @@ export default [
     photo: natashaImg,
     alt: 'Photo Natalia',
     role: 'Developer',
-    links: [
-      {
-        instagram: 'https://www.instagram.com/?hl=ru',
-      },
-      {
-        facebook: 'https://uk-ua.facebook.com/',
-      },
-      {
-        linkedin: 'https://ru.linkedin.com/',
-      },
-    ],
+    links: {
+      instagram: 'https://www.instagram.com/?hl=ru',
+      facebook: 'https://www.facebook.com/natalia.bykmirza',
+      linkedin: 'https://ru.linkedin.com/',
+    },
   },
 ];

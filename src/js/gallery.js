@@ -1,19 +1,20 @@
-// import { fetchEvents } from './service/api';
+import apiEvents from '../js/service/api';
+import refs from './reference';
+import setPagination from './pagination';
 
 import articlesTpl from '../templates/galleryTmp.hbs';
-import apiEvents from '../js/service/api';
-import setPagination from './pagination';
+
+import { showLoader, hideLoader } from './preload';
+
 
 // import articlesTpl from '../templates/galleryTmp.hbs';
 
-const refs = {
-  gallery: document.querySelector('#gallery-js'),
-};
 
+showLoader();
 apiEvents.fetchEvents().then(data => {
   renderGallery(data);
   setPagination(data.page.totalElements);
-});
+}).finally(hideLoader);
 
 function renderGallery(data) {
   const events = data._embedded.events;

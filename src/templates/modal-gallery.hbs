@@ -1,6 +1,13 @@
+<button type="button" class="lightbox__button" data-action="close-lightbox">
+  {{!-- <svg width="17px" height="17px" aria-label="Закрытие">
+    <use href="./images/sprite.svg#icon-close"></use>
+  </svg> --}}
+  X
+</button>
+
 <img src={{images.5.url}} alt='{{name}}' class='modal-img-gallery' />
 <div class='modal-gallery'>
-  
+
   <div class='poster-img'>
     <img class='modal-img' src={{images.5.url}} alt='{{name}}' />
   </div>
@@ -23,27 +30,25 @@
     <p class='info-text'>{{_embedded.attractions.0.name}}</p>
     <h3 class='info-title'>PRICES</h3>
     {{#if priceRanges}}
-      {{#each priceRanges}}
-        <p class='info-text price-text'>
-          <svg class='code' aria-label='Штрих-код'>
-            <use href='./images/sprite.svg#icon-code'></use>
-          </svg>
-          {{this.type}}
-          {{this.min}}
-          -
-          {{this.max}}
-          {{this.currency}}
-        </p>
-         <a href={{../url}} class="btn-buy-ticket link animate__animated animate__flash" target="_blank">BUY TICKETS</a>
-      {{/each}}
+    {{#each priceRanges}}
+    <p class='info-text price-text'>
+      <svg class='code' aria-label='Штрих-код'>
+        <use href='./images/sprite.svg#icon-code'></use>
+      </svg>
+      {{this.type}}
+      {{this.min}}
+      -
+      {{this.max}}
+      {{this.currency}}
+    </p>
+    <a href={{../url}} class="btn-buy-ticket link animate__animated animate__flash" target="_blank">BUY TICKETS</a>
+    {{/each}}
     {{/if}}
     {{#unless priceRanges}}
-      <p class='info-text prise-text'>Tickets are not yet available. Please, try again later.</p>
+    <p class='info-text prise-text'>Tickets are not yet available. Please, try again later.</p>
     {{/unless}}
-     </div>
-
+  </div>
 </div>
-    <button type='button' class='button button-more-info' data-action='more-info'>
-      MORE FROM THIS AUTHOR
-    </button>
- 
+<button type='button' class='button button-more-info' data-action='more-info'>
+  MORE FROM THIS AUTHOR
+</button>

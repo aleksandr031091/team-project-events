@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import './js/preload';
 import './js/scrollToTop';
+import './js/popUp';
 import './js/header';
 import './js/gallery';
 import './js/footer';

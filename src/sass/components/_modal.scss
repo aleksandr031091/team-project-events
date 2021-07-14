@@ -1,27 +1,20 @@
-:root {
-  --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
-  --timing-function: 250ms;
-}
-.modal-open {
-  overflow: hidden;
+// :root {
+//   --animation-duration: cubic-bezier(0.4, 0, 0.2, 1);
+//   --timing-function: 250ms;
+// }
+.modal-img {
+  display: none;
 }
 
-.modal-gallery {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 595px;
-    margin: 0px auto;
-  }
-}
-.poster-img {
-  @media screen and (min-width: 768px) {
-    display: block;
-    width: 233px;
-    height: 416px;
-    margin-right: 30px;
-    padding-bottom: 35px;
+.lightbox {
+  position: fixed;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
   }
 }
 
@@ -30,25 +23,41 @@
   z-index: 200;
   top: 0;
   left: 0;
+  overflow-y: scroll;
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 
   opacity: 0;
   pointer-events: none;
   width: 100vw;
   height: 100vh;
 
-  overflow: scroll;
   background: $modal-overlay-color;
   backdrop-filter: blur(3px);
-  transition: all var(--timing-function) var(--animation-duration);
+  // transition: all var(--timing-function) var(--animation-duration);
 
-  &.is-open {
-    opacity: 1;
-    pointer-events: initial;
-    overflow: scroll;
+  @media screen and (min-width: 768px) {
+    // margin-left: calc(100vw - 100%);
+    // margin-right: 0;
+    // padding-top: 180px;
+    padding-top: 200px;
+    // padding-right: 85px;
+    // padding-left: 85px;
   }
+  // @media screen and (min-width: 1280px) {
+  //   overflow: hidden;
+  //   padding-top: 0;
+
+  // }
 }
+
+.modal-open {
+  overflow: hidden;
+}
+
 .lightbox__content {
-  overflow: scroll;
+  flex-direction: column;
   position: relative;
   padding-top: 75px;
   padding-bottom: 75px;
@@ -57,26 +66,31 @@
   margin-bottom: 100px;
   background-color: $modal-bg-color;
   border-radius: 150px 0px;
-  transform: scale(0.95);
-  transition: transform var(--timing-function) var(--animation-duration);
+
+  // transition: transform var(--timing-function) var(--animation-duration);
 
   @media screen and (min-width: 768px) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 650px;
-    max-height: auto;
+    width: 595px;
+    height: 831px;
+
     padding-top: 28px;
     padding-bottom: 56px;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    // padding-right: 20px;
+    padding-left: 50px;
+    border-radius: 300px 0px;
+
+    // margin-top: 50px;
+    // margin-bottom: 50px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 950px;
-    overflow: hidden;
+    width: 930px;
+    height: 1023px;
+    padding-top: 62px;
+    padding-bottom: 56px;
   }
 }
 
@@ -91,20 +105,64 @@
   object-fit: cover;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 40px;
+    margin-bottom: 43px;
     width: 70px;
     height: 70px;
   }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 40px;
+    width: 132px;
+    height: 132px;
+  }
 }
-.modal-img {
-  display: none;
+
+.modal-gallery {
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-bottom: 43px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    margin-bottom: 45px;
+  }
 }
+
+.poster-img {
+  @media screen and (min-width: 768px) {
+    // margin-right: 30px;
+    width: 100%;
+
+    // display: block;
+    // width: 233px;
+    // height: 416px;
+    // margin-right: 30px;
+    // margin-bottom: 178px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .modal-img {
     display: block;
-    width: 100%;
-    height: 100%;
+    // margin-right: 0;
+    width: 233px;
+    height: 416px;
+    // margin-right: 30px;
     object-fit: cover;
+
+    // object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal-img {
+    // margin-right: 0;
+    width: 360px;
+    height: 641px;
+    // margin-right: 30px;
+
+    // object-fit: contain;
   }
 }
 
@@ -112,7 +170,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    padding-left: 0;
+    width: 100%;
+    // justify-content: space-between;
+  }
 }
+
 .info-title {
   font-style: normal;
   font-weight: bold;
@@ -121,15 +187,33 @@
   text-align: center;
   color: $accent-color;
   margin-bottom: 5px;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 7px;
+  }
 }
+
 .info-text {
-  display: block;
+  // display: block;
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 10px;
   color: #000000;
+
+  @media screen and (min-width: 768px) {
+    text-align: start;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
 }
+
 .code {
   display: inline-block;
   width: 24px;
@@ -146,17 +230,23 @@
   cursor: pointer;
   width: 145px;
   height: 40px;
-  margin-bottom: 30px;
 
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
-  color: #ffffff;
+  color: $basic-text-color;
   background: $modal-accent-color;
   border-radius: 5px;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 1.2;
+  }
 }
+
 .button-more-info {
   display: block;
+  width: 230px;
   height: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -164,10 +254,11 @@
   box-sizing: border-box;
   border-radius: 5px;
   color: $modal-accent-color;
-  background-color: rgba(211, 154, 154, 0);
+  background-color: $modal-bg-color;
   box-shadow: none;
-  transition: all var(--timing-function) var(--animation-duration);
+  // transition: all var(--timing-function) var(--animation-duration);
 }
+
 .lightbox__button {
   position: absolute;
   top: 20px;
@@ -180,16 +271,18 @@
   border: none;
   border-radius: 50%;
   background-color: $modal-bg-color;
+  font-size: 25px;
+  cursor: pointer;
 
-  fill: $modal-accent-color;
+  color: $modal-accent-color;
 
   @media screen and (min-width: 768px) {
-    top: 5px;
-    right: 80px;
+    top: 10px;
+    font-size: 30px;
   }
 
   @media screen and (min-width: 1280px) {
-    top: 50px;
-    right: 380px;
+    top: 15px;
+    font-size: 40px;
   }
 }
