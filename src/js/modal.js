@@ -18,20 +18,22 @@ import { showLoader, hideLoader } from './preload';
 //   document.body.setAttribute('style', 'overflow:hidden');
 // }
 
-
-
 refs.gallery.addEventListener('click', onGalleryClick);
 
 refs.lightbox.addEventListener('click', closeOnBackdrop);
-document.addEventListener('keydown', closeOnEscape);
 
 function onGalleryClick(e) {
-  // e.preventDefault();
+  document.addEventListener('keydown', closeOnEscape);
+
   const cardId = e.target.closest('li').dataset.action;
   if (!cardId) return;
   showLoader();
-  apiEvents.fetchEventsById(cardId).then(data => {
-    const markUp = modalGalleryTpl(data);
+
+  apiEvents
+    .fetchEventsById(cardId)
+    .then(data => {
+      const markUp = modalGalleryTpl(data);
+
 
     // basicLightbox.create(modalGalleryTpl(data)).show();
     // document.body.classList.add('modal-open');
@@ -46,10 +48,26 @@ function onGalleryClick(e) {
     const author = document.querySelector('[data-action="more-info"]');
     author.addEventListener('click', onClickAuthorInfo);
 
-    function onClickAuthorInfo(e) {
-      e.preventDefault();
-      closeOnClick();
-      apiEvents.keyword = data._embedded.attractions[0].name;
+
+      refs.contentLightbox.innerHTML = markUp;
+      refs.lightbox.classList.add('is-open');
+      document.body.classList.add('modal-open');
+      //   получить ссылку на кнопочку, повесить на нее слушателя,
+      // в обработчике событий: закрыть модалку,
+      // установить в аписервисе новое keyword с именем того артиста/звезды _embedded:
+      // attractions :name , дальше вызываем фетчевентс
+      //
+      const author = document.querySelector('[data-action="more-info"]');
+      author.addEventListener('click', onClickAuthorInfo);
+      const button = document.querySelector('[data-action="close-lightbox"]');
+      button.addEventListener('click', closeOnClick);
+
+
+      function onClickAuthorInfo(e) {
+        e.preventDefault();
+        closeOnClick();
+        apiEvents.keyword = data._embedded.attractions[0].name;
+        apiEvents.resetPage();
 
       apiEvents.fetchEvents().then(data => {
         renderGallery(data);
@@ -58,21 +76,23 @@ function onGalleryClick(e) {
     }
   }).finally(hideLoader);
 
-  const button = document.querySelector('[data-action="close-lightbox"]');
 
-  button.addEventListener('click', closeOnClick);
+        apiEvents.fetchEvents().then(data => {
+          renderGallery(data);
+          setPagination(data.page.totalElements);
+        });
+      }
+    })
+    .finally(isHiddenLoader);
 }
 
 function closeOnClick() {
+  document.removeEventListener('keydown', closeOnEscape);
   refs.lightbox.classList.remove('is-open');
   document.body.classList.remove('modal-open');
 }
 
 function closeOnBackdrop(e) {
-  if (e.target) {
-    refs.lightbox.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
-  }
   if (e.target === e.currentTarget) {
     closeOnClick();
   }
