@@ -52,8 +52,9 @@ function onGalleryClick(e) {
       button.addEventListener('click', closeOnClick);
 
 
-      function onClickAuthorInfo(e) {
-        e.preventDefault();
+
+      function onClickAuthorInfo() {
+     
         closeOnClick();
         apiEvents.keyword = data._embedded.attractions[0].name;
         apiEvents.resetPage();
@@ -61,6 +62,8 @@ function onGalleryClick(e) {
         apiEvents.fetchEvents().then(data => {
           renderGallery(data);
           setPagination(data.page.totalElements);
+          refs.formSearch.elements.formSearc.value = apiEvents.keyword
+      
         });
       }
  }).finally(hideLoader)
