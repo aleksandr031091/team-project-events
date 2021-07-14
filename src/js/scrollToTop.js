@@ -1,7 +1,6 @@
 import refs from './reference';
 
-export default window.addEventListener('scroll', e => {
-  
+window.addEventListener('scroll', e => {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     refs.btnToTop.style.display = 'block';
   } else {

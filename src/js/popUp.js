@@ -1,21 +1,20 @@
 import refs from './reference';
 
-const isHave = localStorage.getItem('wasClick');
+const wasMessageshow = localStorage.getItem('wasMessageshow');
 
 function onPopUp() {
+  if (wasMessageshow) return;
   const showTime = setTimeout(e => {
-    if (!isHave) {
-      refs.popUp.style.display = 'block';
-      refs.popUp.addEventListener('click', e => {
-        if (e.target.tagName !== 'A') return false;
-        localStorage.setItem('wasClick', '1');
-        e.currentTarget.style.display = 'none';
-      });
-    }
+    refs.popUp.style.display = 'block';
+    refs.popUp.addEventListener('click', e => {
+      if (e.target.tagName !== 'A') return false;
+      localStorage.setItem('wasMessageshow', 'true');
+      e.currentTarget.style.display = 'none';
+    });
+    setTimeout(z => {
+      clearTimeout(showTime);
+      refs.popUp.style.display = 'none';
+    }, 5000);
   }, 5000);
-  setTimeout(z => {
-    clearTimeout(showTime);
-    refs.popUp.style.display = 'none';
-  }, 10000);
 }
 onPopUp();
