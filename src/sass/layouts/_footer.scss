@@ -57,3 +57,40 @@
     color: $accent-color;
   }
 }
+/* Бегущая строка */
+.footer__runStr {
+  height: 22px;
+  width: 100%;
+}
+.running__string {
+  color: $accent-color;
+  font-weight: bold;
+
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.event-booster {
+  animation-name: changeRunColor;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-shadow: -1px -1px 1px;
+}
+
+@keyframes changeRunColor {
+  0% {
+    color: $accent-color;
+    text-shadow: $basic-text-color;
+  }
+
+  50% {
+    color: $basic-text-color;
+    text-shadow: $accent-color;
+  }
+
+  100% {
+    color: $accent-color;
+    text-shadow: $basic-text-color;
+  }
+}
