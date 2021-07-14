@@ -8,7 +8,6 @@ refs.checkboxChangeThemeRef.addEventListener('change', onChangeTheme);
 
 function onChangeTheme(e) {
   const lightThemeChange = document.body.classList.toggle(Theme.LIGHT);
-
   toggleClassList();
   localStorage.setItem('lightTheme', lightThemeChange);
 }
@@ -25,6 +24,8 @@ function populateTheme() {
 }
 
 function toggleClassList() {
+  refs.logo.classList.toggle('is-hidden');
+  refs.logoLight.classList.toggle('is-hidden');
   refs.lightbox.classList.toggle(Theme.LIGHT);
   refs.gallery.classList.toggle(Theme.LIGHT);
 

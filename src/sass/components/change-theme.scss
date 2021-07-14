@@ -39,6 +39,9 @@ body.light-theme {
   }
   .info-text {
     color: $secondary-text-color;
+    svg {
+      stroke: none;
+    }
   }
 }
 
@@ -122,22 +125,9 @@ body.light-theme {
     animation-iteration-count: infinite;
     animation-direction: alternate;
   }
+
   .footer__button:hover {
     animation-play-state: paused;
-  }
-
-  @keyframes changeColor {
-    0% {
-      color: $accent-color;
-    }
-
-    50% {
-      color: $secondary-text-color;
-    }
-
-    100% {
-      color: $accent-color;
-    }
   }
 }
 
@@ -258,4 +248,8 @@ body.light-theme {
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
   box-shadow: 0 0 0 3px #2196f3;
+}
+
+.is-hidden {
+  display: none;
 }

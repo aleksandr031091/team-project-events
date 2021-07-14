@@ -1,4 +1,5 @@
 export default {
+
     //gallery nodes
     gallery: document.querySelector('#gallery-js'),
     liCardGallery: document.querySelector('.card-container'),
@@ -16,6 +17,8 @@ export default {
     dropdownMenu: document.querySelector('#dropdown-js'),
     dropdownBtn: document.querySelector('#dropdownBtn'),
     dropdownPlaceholder: document.querySelector('#dropdownPlaceholder-js'),
+    logo: document.querySelector('.logo-header'),
+    logoLight: document.querySelector('.logo-header.light-theme'),
     
     //footer nodes
     footerButton: document.querySelector('#footer-button-js'),
@@ -36,3 +39,5 @@ export default {
     footerRef: document.querySelector('.footer__container'),
     headerContainerRef: document.querySelector('.header-container'),
 }
+
+
