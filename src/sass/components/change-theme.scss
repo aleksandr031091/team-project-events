@@ -120,18 +120,7 @@ body.light-theme {
   .footer__text {
     color: $secondary-text-color;
   }
-  .footer__button {
-    color: $secondary-text-color;
-    animation-name: changeColor;
-    animation-duration: 2250ms;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
 
-  .footer__button:hover {
-    animation-play-state: paused;
-  }
 }
 
 .tui-pagination.light-theme .tui-is-disabled .tui-ico-last {

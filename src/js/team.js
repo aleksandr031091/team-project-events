@@ -55,7 +55,7 @@ export default [
     },
   },
   {
-    first_name: 'Sergiy',
+    first_name: 'Serhii',
     last_name: 'Bulynin',
     photo: serejaImg,
     alt: 'Photo Sergiy',
